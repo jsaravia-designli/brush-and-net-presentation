@@ -1,0 +1,1247 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title data-src="">Brush and Net Findings</title>
+<link data-src="" rel="preconnect" href="https://fonts.googleapis.com">
+<link data-src="" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link data-src="" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&amp;family=Inter+Tight:wght@400;700;800&amp;family=Space+Grotesk:wght@400;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap">
+<style data-src="">
+:root { color-scheme: dark; }
+@keyframes proposal-widget-in {
+0% { opacity: 0; transform: translateY(12px); }
+100% { opacity: 1; transform: translateY(0px); }
+}
+:root { --tl-navy: #0E1034; --tl-navy-2: #161A4A; --tl-coral: #F87565; --tl-coral-soft: #FFB2A5; --tl-ink: #ffffff; --tl-ink-soft: rgba(255,255,255,.72); --tl-ink-faint: rgba(255,255,255,.5); --tl-rule: rgba(255,255,255,.18); }
+.slide--custom-html .slide-inner { padding: 0px; }
+.tl-slide-custom { display: flex; flex-direction: column; flex: 1 1 0%; min-height: 0px; width: 100%; overflow: hidden; }
+.tl-inner { box-sizing: border-box; display: flex; flex-direction: column; flex: 1 1 0%; min-width: 0px; min-height: 0px; width: 100%; height: 100%; padding: 4.5% 5.5%; container-type: size; }
+.tl-eyebrow { font-family: "JetBrains Mono", monospace; font-size: 1cqw; font-weight: 700; letter-spacing: 0.22em; color: var(--tl-coral); margin-bottom: 0.7cqw; text-transform: uppercase; }
+.tl-h2 { font-size: 2.5cqw; font-weight: 700; line-height: 1.05; letter-spacing: -0.005em; margin: 0px 0px 0.5cqw; color: var(--tl-ink); max-width: 94%; }
+.tl-h2 .coral { color: var(--tl-coral); }
+.tl-sub { color: var(--tl-ink-soft); font-size: 1.15cqw; margin: 0px 0px 0.8cqw; max-width: 88%; font-weight: 300; line-height: 1.3; }
+.slide { position: relative; width: 100%; aspect-ratio: 16 / 9; background: radial-gradient(ellipse 80% 60% at 20% 15%,rgba(248,117,101,.07) 0%,transparent 55%),radial-gradient(ellipse 90% 70% at 85% 95%,rgba(88,55,123,.1) 0%,transparent 60%),var(--tl-navy); color: var(--tl-ink); border-radius: 1.8cqw; overflow: hidden; box-shadow: rgba(0, 0, 0, 0.35) 0px 18px 48px; font-family: Rubik, "Helvetica Neue", "Segoe UI", Arial, sans-serif; font-weight: 400; container-type: size; }
+.slide--cover, .slide--mission, .slide--guarantee-hero { background: var(--tl-navy); }
+.slide--cover::after, .slide--mission::after, .slide--guarantee-hero::after { content: ""; position: absolute; inset: 1.4cqw; background-image: linear-gradient(rgba(14, 16, 52, 0.45), rgba(14, 16, 52, 0.82)), url("assets/cover-bg.jpg"); background-size: cover; background-position: center center; border-radius: 1.4cqw; z-index: 0; pointer-events: none; }
+.slide--cover .slide-inner, .slide--mission .slide-inner, .slide--guarantee-hero .slide-inner { z-index: 1; }
+.slide-inner { position: absolute; inset: 0px; padding: 5.5% 6.5%; display: flex; flex-direction: column; }
+.slide-logo { position: absolute; top: 3.5%; right: 3.5%; height: 9%; width: auto; object-fit: contain; opacity: 0.92; z-index: 2; }
+.slide-eyebrow { font-size: 1.15cqw; font-weight: 700; letter-spacing: 0.22em; color: var(--tl-coral); margin-bottom: 2.5cqw; text-transform: uppercase; }
+.slide-h2 { font-size: 4cqw; font-weight: 700; line-height: 1.08; letter-spacing: -0.005em; margin: 0px 0px 2.4cqw; color: var(--tl-ink); max-width: 92%; }
+.slide-sub { color: var(--tl-ink-soft); font-size: 2.1cqw; margin: 0px 0px 2.4cqw; max-width: 92%; font-weight: 300; line-height: 1.3; }
+.slide--cover .slide-inner { justify-content: flex-end; padding-bottom: 8.5%; }
+.slide--cover .slide-cover-title { font-size: 6.6cqw; font-weight: 700; line-height: 1.02; letter-spacing: -0.015em; color: var(--tl-ink); margin: 0px; }
+.slide--cover .slide-cover-title--coral { color: var(--tl-coral); }
+.slide--cover .slide-cover-sub { color: var(--tl-ink); font-size: 2.3cqw; margin-top: 1.6cqw; max-width: 80%; font-weight: 300; line-height: 1.35; }
+.slide--cover .slide-cover-footer { position: absolute; right: 6%; top: 5.5%; color: var(--tl-ink); font-size: 1.15cqw; letter-spacing: 0.12em; font-weight: 500; text-transform: uppercase; }
+.slide--cover .slide-cover-client-project { color: var(--tl-coral); font-weight: 700; font-size: 2.6cqw; letter-spacing: 0.14em; text-transform: uppercase; margin: 0px 0px 1.4cqw; max-width: 85%; }
+.slide-bullets { list-style: none; padding: 0px; margin: 0.6cqw 0px 0px; }
+.slide-bullets li { position: relative; padding-left: 3.2cqw; margin-bottom: 1.5cqw; color: var(--tl-ink); font-size: 2.3cqw; line-height: 1.4; font-weight: 300; max-width: 94%; }
+.slide-bullets li::before { content: "➔"; position: absolute; left: 0px; top: 0px; color: var(--tl-coral); font-weight: 400; font-size: 1em; line-height: 1.4; }
+.slide-bullets li.is-coral { color: var(--tl-coral); font-weight: 600; }
+.slide-bullets .emph { color: var(--tl-coral); font-weight: 700; }
+.slide-hero-center { flex: 1 1 0%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 0px; }
+.slide-hero-copy { max-width: 82%; color: var(--tl-ink); font-size: 3.5cqw; font-weight: 400; line-height: 1.25; margin: 0px; }
+.slide-hero-copy .coral { color: var(--tl-coral); font-weight: 700; }
+@media (max-width: 640px) {
+.slide-inner { padding: 7% 6% 10%; }
+}
+.rr2 { flex: 1 1 0%; display: flex; flex-direction: column; gap: 0.94cqw; margin-top: 2.07cqw; }
+.rr2-row { display: grid; grid-template-columns: 10.94cqw 1fr 28.12cqw; gap: 1.66cqw; align-items: stretch; padding: 1.45cqw 1.66cqw; border-radius: 20px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--tl-rule); }
+.rr2-day { font-family: "JetBrains Mono", monospace; text-align: center; padding: 0.94cqw 0px; border-right: 1px dashed var(--tl-rule); }
+.rr2-day .d { font-family: Rubik, sans-serif; font-size: 2.91cqw; font-weight: 800; color: var(--tl-coral); letter-spacing: -0.03em; line-height: 1; }
+.rr2-day .l { font-size: 0.78cqw; letter-spacing: 0.2em; color: var(--tl-ink-faint); text-transform: uppercase; margin-top: 0.41cqw; font-weight: 700; }
+.rr2-body .h { font-size: 1.72cqw; font-weight: 700; color: var(--tl-ink); line-height: 1.15; margin-bottom: 0.41cqw; }
+.rr2-body .s { font-size: 1.12cqw; color: var(--tl-ink-soft); font-weight: 400; line-height: 1.45; max-width: 53.12cqw; }
+.rr2-body .rc { font-family: "JetBrains Mono", monospace; font-size: 0.82cqw; letter-spacing: 0.15em; color: var(--tl-coral); text-transform: uppercase; margin-top: 0.62cqw; font-weight: 700; }
+.rr2-stamp { display: flex; align-items: center; justify-content: center; border-radius: 14px; background: rgba(248, 117, 101, 0.12); border: 2px dashed var(--tl-coral); color: var(--tl-coral); font-family: "JetBrains Mono", monospace; font-size: 0.82cqw; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; padding: 1.04cqw 1.25cqw; text-align: center; line-height: 1.3; }
+.rr2-stamp .big { display: block; font-family: Rubik, sans-serif; font-size: 1.5cqw; font-weight: 800; letter-spacing: -0.01em; text-transform: none; color: var(--tl-ink); margin-bottom: 5px; }
+.rr2-caption { margin-top: 0.62cqw; padding: 1.25cqw 1.66cqw; border-radius: 16px; background: linear-gradient(90deg, rgba(248, 117, 101, 0.14), transparent); border-left: 4px solid var(--tl-coral); color: var(--tl-ink); font-size: 1.12cqw; font-weight: 400; line-height: 1.45; }
+.rr2-caption .coral { color: var(--tl-coral); font-weight: 700; }
+.slide-sharelink { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; height: 100%; }
+.slide-sharelink .slide-sharelink-tool { margin-top: 2.4cqw; display: flex; flex-direction: column; gap: 1.4cqw; width: 100%; max-width: 72cqw; }
+.slide-sharelink-name { width: 100%; background: rgba(255, 255, 255, 0.06); border: 0.12cqw solid rgba(255, 255, 255, 0.18); border-radius: 0.7cqw; padding: 1.1cqw 1.3cqw; color: var(--tl-ink); font-family: "Inter Tight", sans-serif; font-size: 1.5cqw; outline: none; }
+.slide-sharelink-name:focus { border-color: rgba(248, 117, 101, 0.55); }
+.slide-sharelink-name::placeholder { color: var(--tl-ink-soft); }
+.slide-sharelink-gen { align-self: flex-start; background: var(--tl-coral); color: var(--tl-navy); border: 0px; border-radius: 0.8cqw; padding: 1.2cqw 2.2cqw; font-family: "Inter Tight", sans-serif; font-weight: 700; font-size: 1.8cqw; cursor: pointer; transition: transform 0.1s, opacity 0.1s; }
+.slide-sharelink-gen:hover { transform: translateY(-0.15cqw); }
+.slide-sharelink-gen:disabled { opacity: 0.6; cursor: default; transform: none; }
+.slide-sharelink-result { display: flex; gap: 0.8cqw; width: 100%; }
+.slide-sharelink-url { flex: 1 1 0%; min-width: 0px; background: rgba(255, 255, 255, 0.06); border: 0.12cqw solid rgba(248, 117, 101, 0.45); border-radius: 0.7cqw; padding: 1cqw 1.2cqw; color: var(--tl-ink); font-family: "JetBrains Mono", monospace; font-size: 1.25cqw; outline: none; }
+.slide-sharelink-copy { flex-shrink: 0; background: rgba(255, 255, 255, 0.1); color: var(--tl-ink); border: 0.12cqw solid rgba(255, 255, 255, 0.2); border-radius: 0.7cqw; padding: 1cqw 1.8cqw; font-family: "Inter Tight", sans-serif; font-weight: 700; font-size: 1.35cqw; cursor: pointer; }
+.slide-sharelink-copy:hover { background: rgba(255, 255, 255, 0.16); }
+.iwf-issues { display: flex; flex-direction: column; justify-content: center; }
+.iwf-issues .tl-eyebrow { color: var(--tl-coral); margin-bottom: 0.8cqw; }
+.iwf-issues .tl-h2 { font-size: 3cqw; margin-bottom: 0.6cqw; }
+.iwf-issues-sub { font-size: 1.5cqw; line-height: 1.45; color: var(--tl-ink-soft); margin: 0px 0px 1.8cqw; max-width: 64cqw; }
+.iwf-issues-list { display: flex; flex-direction: column; gap: 0.8cqw; }
+.iwf-issues-row { display: grid; grid-template-columns: 9cqw 1fr 10cqw; gap: 1.2cqw; align-items: center; background: rgba(255, 255, 255, 0.04); border: 0.12cqw solid rgba(255, 255, 255, 0.14); border-radius: 0.8cqw; padding: 0.8cqw 1.3cqw; }
+.iwf-issues-pri { font-family: "Inter Tight", sans-serif; font-weight: 700; font-size: 1cqw; letter-spacing: 0.12em; text-transform: uppercase; color: var(--tl-coral); }
+.iwf-issues-name { font-size: 1.45cqw; line-height: 1.35; color: var(--tl-ink); }
+.iwf-issues-area { font-family: "Inter Tight", sans-serif; font-weight: 700; font-size: 0.95cqw; letter-spacing: 0.12em; text-transform: uppercase; color: var(--tl-ink-faint); text-align: right; }
+.iwf-issue { display: flex; flex-direction: column; justify-content: center; }
+.iwf-issue .tl-eyebrow { color: var(--tl-coral); margin-bottom: 1cqw; }
+.iwf-issue-tags { display: flex; gap: 0.8cqw; margin-bottom: 1.4cqw; }
+.iwf-issue-tag { font-family: "Inter Tight", sans-serif; font-weight: 700; font-size: 1.05cqw; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tl-ink-soft); border: 0.12cqw solid rgba(255, 255, 255, 0.25); border-radius: 2cqw; padding: 0.4cqw 1.1cqw; }
+.iwf-issue-tag--pri { color: var(--tl-coral); border-color: var(--tl-coral); background: rgba(248, 117, 101, 0.1); }
+.iwf-issue-title { font-size: 3.2cqw; line-height: 1.18; margin: 0px 0px 2cqw; max-width: 72cqw; }
+.iwf-issue-desc { font-size: 1.7cqw; line-height: 1.5; color: var(--tl-ink-soft); margin: -1cqw 0px 2cqw; max-width: 66cqw; }
+.iwf-issue-why-label { font-family: "Inter Tight", sans-serif; font-weight: 700; font-size: 1.1cqw; letter-spacing: 0.16em; text-transform: uppercase; color: var(--tl-coral); margin-bottom: 0.7cqw; }
+.iwf-issue-why { font-size: 1.9cqw; line-height: 1.5; color: var(--tl-ink-soft); margin: 0px; max-width: 66cqw; padding-left: 1.4cqw; border-left: .4cqw solid var(--tl-coral); }
+.iwf-prop { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.iwf-prop .tl-eyebrow { color: var(--tl-coral); margin-bottom: 1cqw; }
+.iwf-prop .tl-h2 { font-size: 4cqw; margin-bottom: 1.4cqw; }
+.iwf-prop-sub { font-size: 1.7cqw; color: var(--tl-ink-soft); max-width: 60cqw; margin: 0px auto 3cqw; line-height: 1.5; }
+.iwf-prop-btn { display: inline-flex; align-items: center; gap: 0.8cqw; background: var(--tl-coral); color: var(--tl-navy); font-family: "Inter Tight", sans-serif; font-weight: 800; font-size: 2cqw; padding: 1.4cqw 3cqw; border-radius: 1cqw; text-decoration: none; transition: transform 0.12s; }
+.iwf-prop-btn:hover { transform: translateY(-0.2cqw); }
+.iwf-prop-btn[href] { box-shadow: rgba(248, 117, 101, 0.3) 0px 1cqw 3cqw; }
+.iwf-prop-url { margin-top: 1.6cqw; font-family: "JetBrains Mono", monospace; font-size: 1.3cqw; color: var(--tl-ink-faint); }
+.iwf-prop-url span.is-filled { color: var(--tl-coral); }
+.iwf-d30o { display: flex; flex-direction: column; justify-content: center; }
+.iwf-d30o .tl-eyebrow { color: var(--tl-coral); margin-bottom: 1cqw; }
+.iwf-d30o .tl-h2 { font-size: 3.4cqw; margin-bottom: 1.4cqw; }
+.iwf-d30o-outcome { font-family: "Inter Tight", sans-serif; font-weight: 800; font-size: 2.8cqw; line-height: 1.25; color: var(--tl-ink); background: rgba(248, 117, 101, 0.1); border-left: .5cqw solid var(--tl-coral); border-radius: 0px 1cqw 1cqw 0px; padding: 1.8cqw 2.4cqw; margin-bottom: 2cqw; }
+.iwf-d30o-confirm { font-size: 1.6cqw; color: var(--tl-ink-soft); line-height: 1.5; }
+.iwf-d30o-outcome-label { font-family: "Inter Tight", sans-serif; font-weight: 700; font-size: 1cqw; letter-spacing: 0.16em; text-transform: uppercase; color: var(--tl-ink-faint); margin-bottom: 0.7cqw; }
+.iwf-d30o-guarantee { display: flex; align-items: center; gap: 1.2cqw; background: rgba(248, 117, 101, 0.12); border: 0.14cqw solid var(--tl-coral); border-radius: 0.9cqw; padding: 1.1cqw 1.6cqw; margin: 1.6cqw 0px; font-family: "Inter Tight", sans-serif; font-weight: 700; font-size: 1.7cqw; line-height: 1.3; color: var(--tl-ink); }
+.iwf-d30o-guarantee .coral { color: var(--tl-coral); }
+.iwf-d30o .iwf-d30o-outcome .is-filled { color: var(--tl-ink); }
+.iwf-d30p { display: flex; flex-direction: column; justify-content: center; }
+.iwf-d30p .tl-eyebrow { color: var(--tl-coral); margin-bottom: 1cqw; }
+.iwf-d30p .tl-h2 { font-size: 3cqw; margin-bottom: 1.4cqw; line-height: 1.2; }
+.iwf-d30p-sub { font-size: 1.5cqw; color: var(--tl-ink-soft); margin-bottom: 2cqw; }
+.iwf-d30p-acts { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4cqw; }
+.iwf-d30p-act { display: flex; align-items: flex-start; gap: 1.2cqw; background: rgba(255, 255, 255, 0.04); border-radius: 1cqw; padding: 1.4cqw 1.6cqw; }
+.iwf-d30p-num { flex-shrink: 0; width: 2.6cqw; height: 2.6cqw; border-radius: 50%; display: grid; place-items: center; background: var(--tl-coral); color: var(--tl-navy); font-family: "Inter Tight", sans-serif; font-weight: 800; font-size: 1.4cqw; }
+.iwf-d30p-text { font-size: 1.5cqw; line-height: 1.35; color: var(--tl-ink); padding-top: 0.3cqw; }
+.iwf-d30p-outcome { font-family: "Inter Tight", sans-serif; font-weight: 700; font-size: 2cqw; line-height: 1.35; color: var(--tl-coral); margin: 0px 0px 1.2cqw; max-width: 70cqw; }
+html, body { margin: 0px; padding: 0px; background: rgb(0, 0, 0); color: rgb(255, 255, 255); height: 100%; overflow: hidden; font-family: Rubik, "Helvetica Neue", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body.present-body { cursor: auto; }
+body.is-idle { cursor: none; }
+.present-stage { position: fixed; inset: 0px; display: flex; align-items: center; justify-content: center; perspective: 1200px; }
+.present-slide-wrap { position: absolute; width: min(100vw, 177.778vh); height: min(100vh, 56.25vw); display: flex; align-items: center; justify-content: center; opacity: 0; transform: scale(0.985); pointer-events: none; transition: opacity 0.18s, transform 0.22s; will-change: opacity, transform; }
+.present-slide-wrap.is-active { opacity: 1; transform: scale(1); pointer-events: auto; }
+.present-slide-wrap.iwf-area-skip { display: none !important; }
+.present-slide-wrap .slide { width: 100%; height: 100%; border-radius: 0px; box-shadow: none; }
+.slide:not(.slide--bg-coral-bento) .slide-eyebrow { font-size: 1.7cqw !important; margin-bottom: 1.8cqw !important; }
+.tl-inner > .tl-eyebrow { font-size: 1.6cqw; }
+.present-ui { position: fixed; inset: auto 0px 0px; padding: 14px 22px 18px; display: flex; align-items: center; justify-content: space-between; gap: 16px; pointer-events: none; z-index: 100; transition: opacity 0.25s; }
+body.is-idle .present-ui { opacity: 0; }
+.present-counter { font-family: Rubik, sans-serif; font-weight: 300; font-size: 13px; letter-spacing: 0.08em; color: rgba(255, 255, 255, 0.55); position: fixed; top: 16px; right: 22px; }
+.present-counter #curr { color: var(--tl-coral); font-weight: 600; }
+.present-counter .sep { margin: 0px 4px; opacity: 0.5; }
+.present-dots { display: none; }
+.present-hint { pointer-events: auto; appearance: none; background: transparent; border: 1px solid rgba(255, 255, 255, 0.2); color: rgba(255, 255, 255, 0.55); width: 28px; height: 28px; border-radius: 50%; font: 600 13px / 1 Rubik, sans-serif; cursor: pointer; transition: color 0.15s, border-color 0.15s; position: fixed; bottom: 16px; right: 22px; }
+.present-hint:hover { color: var(--tl-coral); border-color: var(--tl-coral); }
+.present-nav-prev { right: 94px; }
+.present-nav-next { right: 58px; }
+.present-help { position: fixed; inset: 0px; background: rgba(0, 0, 0, 0.82); backdrop-filter: blur(8px); display: grid; place-items: center; z-index: 200; animation: 0.18s ease 0s 1 normal none running help-in; }
+.present-help[hidden] { display: none; }
+@keyframes help-in {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+.present-help-inner { max-width: 520px; padding: 40px 48px; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 16px; background: linear-gradient(rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)); }
+.present-help h2 { margin: 0px 0px 20px; font-weight: 700; font-size: 16px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--tl-coral); }
+.present-help dl { display: grid; grid-template-columns: auto 1fr; gap: 10px 24px; margin: 0px; font-weight: 300; font-size: 15px; }
+.present-help dt { font-weight: 500; color: rgb(255, 255, 255); white-space: nowrap; }
+.present-help dd { margin: 0px; color: rgba(255, 255, 255, 0.6); }
+.present-help-close { margin: 24px 0px 0px; font-size: 12px; color: rgba(255, 255, 255, 0.4); }
+.present-help kbd { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 4px; padding: 1px 6px; font-family: inherit; font-size: 0.9em; }
+@page { size: 13.333in 7.5in; margin: 0px; }
+@media print {
+html, body { background: rgb(255, 255, 255); overflow: visible; height: auto; }
+.present-ui, .present-help, .present-counter { display: none !important; }
+.present-stage { position: static; display: block; }
+.present-slide-wrap { position: relative; width: 13.333in; height: 7.5in; break-after: page; display: block; opacity: 1 !important; transform: none !important; }
+.present-slide-wrap:last-child { break-after: auto; }
+.present-slide-wrap .slide { width: 13.333in; height: 7.5in; border-radius: 0px; }
+* { print-color-adjust: exact !important; }
+}
+.iwf-unblock { display: flex; flex-direction: column; justify-content: center; }
+.iwf-unblock .tl-eyebrow { color: var(--tl-coral); margin-bottom: 1cqw; }
+.iwf-unblock .tl-h2 { font-size: 3.6cqw; line-height: 1.12; margin-bottom: 1.6cqw; max-width: 70cqw; }
+.iwf-unblock-body { font-size: 1.8cqw; line-height: 1.55; color: var(--tl-ink-soft); margin: 0px 0px 2.6cqw; max-width: 62cqw; }
+.iwf-unblock-body strong { color: var(--tl-ink); font-weight: 600; }
+.iwf-unblock-flow { display: flex; align-items: center; gap: 1.4cqw; margin-bottom: 2.4cqw; }
+.iwf-unblock-step { font-family: "Inter Tight", sans-serif; font-weight: 700; font-size: 1.25cqw; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tl-ink-soft); background: rgba(255, 255, 255, 0.04); border: 0.12cqw solid rgba(255, 255, 255, 0.2); border-radius: 0.8cqw; padding: 1cqw 1.6cqw; }
+.iwf-unblock-step--mode { color: rgb(255, 255, 255); background: rgba(248, 117, 101, 0.16); border: 0.16cqw solid var(--tl-coral); }
+.iwf-unblock-arrow { font-size: 1.7cqw; color: var(--tl-coral); }
+.iwf-unblock-next { font-family: "Inter Tight", sans-serif; font-weight: 700; font-size: 1.5cqw; color: var(--tl-coral); margin: 0px; }
+.iwf-hdd { display: flex; flex-direction: column; }
+.iwf-hdd .tl-eyebrow { color: var(--tl-coral); margin-bottom: 0.8cqw; }
+.iwf-hdd .tl-h2 { font-size: 2.9cqw; margin-bottom: 0.5cqw; }
+.iwf-hdd-sub { font-size: 1.45cqw; line-height: 1.45; color: var(--tl-ink-soft); margin: 0px 0px 1.4cqw; max-width: 66cqw; }
+.iwf-hdd-figure { flex: 1 1 0%; min-height: 0px; display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.04); border: 0.12cqw solid rgba(255, 255, 255, 0.12); border-radius: 1cqw; padding: 1.2cqw 1.6cqw; }
+.iwf-hdd-figure { position: relative; padding-bottom: 3cqw; }
+.iwf-hdd-figure img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 0.6cqw; }
+.iwf-hdd-cap { position: absolute; bottom: 0.8cqw; transform: translateX(-50%); white-space: nowrap; font-family: "Inter Tight", sans-serif; font-weight: 700; font-size: 1.05cqw; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tl-ink-faint); }
+.iwf-frame { display: grid; grid-template-columns: 1.25fr 1fr; gap: 4cqw; align-items: center; }
+.iwf-frame .tl-eyebrow { color: var(--tl-coral); margin-bottom: 1.2cqw; }
+.iwf-frame .tl-h2 { font-size: 3.6cqw; margin-bottom: 1.6cqw; line-height: 1.1; }
+.iwf-frame-body { font-size: 1.65cqw; line-height: 1.55; color: var(--tl-ink-soft); margin: 0px 0px 1.4cqw; }
+.iwf-frame-body strong { color: var(--tl-ink); font-weight: 600; }
+.iwf-frame-next { font-family: "Inter Tight", sans-serif; font-weight: 700; font-size: 1.5cqw; color: var(--tl-coral); margin: 0px; }
+.iwf-frame-visual { display: flex; flex-direction: column; align-items: stretch; }
+.iwf-frame-vision { background: rgba(248, 117, 101, 0.14); border: 0.16cqw solid var(--tl-coral); border-radius: 1cqw; padding: 1.6cqw 1.8cqw; text-align: center; }
+.iwf-frame-vision .tag { font-family: "Inter Tight", sans-serif; font-weight: 700; font-size: 1cqw; letter-spacing: 0.18em; text-transform: uppercase; color: var(--tl-coral); margin-bottom: 0.4cqw; }
+.iwf-frame-vision .big { font-family: "Inter Tight", sans-serif; font-weight: 800; font-size: 1.9cqw; color: var(--tl-ink); }
+.iwf-frame-break { text-align: center; font-size: 1.15cqw; color: var(--tl-ink-faint); letter-spacing: 0.12em; text-transform: uppercase; font-family: "Inter Tight", sans-serif; font-weight: 700; padding: 0.9cqw 0px; }
+.iwf-frame-break::before { content: "↓ "; color: var(--tl-coral); }
+.iwf-frame-steps { display: flex; flex-direction: column; gap: 0.7cqw; }
+.iwf-frame-step { display: flex; align-items: center; gap: 1cqw; background: rgba(255, 255, 255, 0.04); border: 0.12cqw solid rgba(255, 255, 255, 0.16); border-radius: 0.8cqw; padding: 0.9cqw 1.3cqw; }
+.iwf-frame-step .n { font-family: "Inter Tight", sans-serif; font-weight: 800; font-size: 1.2cqw; color: var(--tl-navy); background: var(--tl-coral); width: 2.2cqw; height: 2.2cqw; border-radius: 50%; display: grid; place-items: center; flex-shrink: 0; }
+.iwf-frame-step .lbl { font-family: "Inter Tight", sans-serif; font-weight: 700; font-size: 1.35cqw; color: var(--tl-ink); }
+.iwf-frame-step .sub { font-size: 1.15cqw; color: rgba(255, 255, 255, 0.78); margin-left: auto; text-align: right; }
+.iwf-ladder { display: flex; flex-direction: column; justify-content: center; }
+.iwf-ladder .tl-eyebrow { color: var(--tl-coral); margin-bottom: 1cqw; }
+.iwf-ladder .tl-h2 { font-size: 3.4cqw; margin-bottom: 0.8cqw; }
+.iwf-ladder-sub { font-size: 1.6cqw; line-height: 1.5; color: var(--tl-ink-soft); margin: 0px 0px 2.4cqw; max-width: 62cqw; }
+.iwf-ladder-first { font-family: "Inter Tight", sans-serif; font-weight: 700; font-size: 3cqw; line-height: 1.3; color: var(--tl-ink); background: rgba(248, 117, 101, 0.1); border-left: 0.6cqw solid var(--tl-coral); border-radius: 1cqw; padding: 2.6cqw 3cqw; margin: 0px; }
+.iwf-ladder-first .is-filled { color: var(--tl-coral); }
+.iwf-tie { display: flex; flex-direction: column; justify-content: center; }
+.iwf-tie .tl-eyebrow { color: var(--tl-coral); margin-bottom: 0.8cqw; }
+.iwf-tie .tl-h2 { font-size: 3cqw; margin-bottom: 0.6cqw; }
+.iwf-tie-sub { font-size: 1.5cqw; line-height: 1.45; color: var(--tl-ink-soft); margin: 0px 0px 2cqw; max-width: 64cqw; }
+.iwf-tie-chain { display: flex; flex-direction: column; gap: 0.9cqw; }
+.iwf-tie-link { display: grid; grid-template-columns: 12cqw 1fr; gap: 1.4cqw; align-items: center; background: rgba(255, 255, 255, 0.04); border: 0.12cqw solid rgba(255, 255, 255, 0.14); border-radius: 0.9cqw; padding: 1cqw 1.5cqw; }
+.iwf-tie-link--vision { background: rgba(248, 117, 101, 0.14); border: 0.16cqw solid var(--tl-coral); }
+.iwf-tie-when { font-family: "Inter Tight", sans-serif; font-weight: 700; font-size: 1.15cqw; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tl-coral); }
+.iwf-tie-what { font-size: 1.4cqw; line-height: 1.4; color: var(--tl-ink); }
+.iwf-tie-what .is-filled { color: var(--tl-coral); font-weight: 600; }
+.iwf-tie-link--vision .iwf-tie-what { font-family: "Inter Tight", sans-serif; font-weight: 700; font-size: 1.55cqw; }
+.iwf-tie-down { text-align: center; color: var(--tl-ink-faint); font-size: 1.3cqw; line-height: 1; margin: -0.2cqw 0px; }
+.iwf-qa { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.iwf-qa-big { font-family: "Inter Tight", sans-serif; font-weight: 800; font-size: 11cqw; line-height: 1; color: var(--tl-coral); margin-bottom: 1.6cqw; }
+.iwf-qa-body { font-size: 1.8cqw; line-height: 1.5; color: var(--tl-ink); max-width: 58cqw; margin: 0px 0px 2.2cqw; }
+.iwf-qa-team { font-family: "Inter Tight", sans-serif; font-weight: 700; font-size: 1.1cqw; letter-spacing: 0.16em; text-transform: uppercase; color: var(--tl-ink-faint); margin-bottom: 0.6cqw; }
+.iwf-qa-names { font-size: 1.5cqw; line-height: 1.5; color: var(--tl-ink-soft); max-width: 60cqw; }
+.iwf-qa-names .is-filled { color: var(--tl-ink); }
+.iw-team-builder { display: flex; flex-direction: column; }
+.iw-team-builder .tl-eyebrow { color: var(--tl-coral); font-size: 1.5cqw; margin-bottom: 0.5cqw; }
+.iw-team-builder .tl-h2 { font-size: 3cqw; margin-bottom: 0.6cqw; }
+.iw-team-builder .tl-sub { font-size: 1.45cqw; line-height: 1.35; color: var(--tl-ink-soft); margin: 0px 0px 1.1cqw; }
+.iw-team-builder .tl-sub strong { color: var(--tl-ink); font-weight: 600; }
+.tb-table { flex: 1 1 0%; min-height: 0px; display: flex; flex-direction: column; gap: 0.45cqw; }
+.tb-head { display: grid; grid-template-columns: 2.6cqw 1fr 17cqw 9cqw; gap: 1cqw; align-items: center; padding: 0px 1.2cqw; font-family: "Space Grotesk", "Inter Tight", system-ui, sans-serif; font-weight: 700; font-size: 1cqw; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255, 255, 255, 0.45); }
+.tb-head .h-cost { text-align: right; }
+.tb-row { display: grid; grid-template-columns: 2.6cqw 1fr 17cqw 9cqw; gap: 1cqw; align-items: center; background: rgba(255, 255, 255, 0.04); border: 0.12cqw solid rgba(255, 255, 255, 0.12); border-radius: 0.7cqw; padding: 0.5cqw 1.2cqw; cursor: pointer; transition: background 0.15s, border-color 0.15s, opacity 0.15s; }
+.tb-row:hover { border-color: rgba(248, 117, 101, 0.45); }
+.tb-row.is-on { background: rgba(248, 117, 101, 0.1); border-color: var(--tl-coral); }
+.tb-row:not(.is-on) .role, .tb-row:not(.is-on) .desc { opacity: 0.45; }
+.tb-row:not(.is-on) .tb-cost { opacity: 0.3; }
+.tb-check { width: 1.9cqw; height: 1.9cqw; border-radius: 0.45cqw; border: 0.16cqw solid rgba(255, 255, 255, 0.35); display: flex; align-items: center; justify-content: center; font-size: 1.25cqw; font-weight: 700; color: transparent; transition: 0.15s; }
+.tb-row.is-on .tb-check { background: var(--tl-coral); border-color: var(--tl-coral); color: rgb(255, 255, 255); }
+.tb-who { min-width: 0px; }
+.tb-who .role { font-family: "Space Grotesk", "Inter Tight", system-ui, sans-serif; font-weight: 700; font-size: 1.55cqw; line-height: 1.15; color: var(--tl-ink); display: flex; align-items: center; gap: 0.6cqw; }
+.tb-who .desc { font-size: 1.12cqw; line-height: 1.25; color: var(--tl-ink-soft); }
+.tb-alloc { display: flex; gap: 0.45cqw; }
+.tb-alloc button { font-family: "Space Grotesk", "Inter Tight", system-ui, sans-serif; font-weight: 700; font-size: 1.15cqw; letter-spacing: 0.04em; color: rgba(255, 255, 255, 0.55); background: rgba(255, 255, 255, 0.06); border: 0.12cqw solid rgba(255, 255, 255, 0.18); border-radius: 0.5cqw; padding: 0.45cqw 1cqw; cursor: pointer; transition: 0.15s; }
+.tb-alloc button:hover { border-color: rgba(248, 117, 101, 0.5); color: var(--tl-ink); }
+.tb-alloc button.is-active { background: var(--tl-coral); border-color: var(--tl-coral); color: rgb(255, 255, 255); }
+.tb-row:not(.is-on) .tb-alloc { opacity: 0.3; pointer-events: none; }
+.tb-alloc .tb-spacer { font-family: "Space Grotesk", "Inter Tight", system-ui, sans-serif; font-weight: 700; font-size: 1.15cqw; letter-spacing: 0.04em; padding: 0.45cqw 1cqw; border: 0.12cqw solid transparent; visibility: hidden; }
+.tb-row:not(.is-on) .tb-alloc button.is-active { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.18); color: rgba(255, 255, 255, 0.55); }
+@keyframes tb-flash {
+0%, 100% { box-shadow: none; }
+30% { box-shadow: 0 0 0 0.3cqw var(--tl-coral); }
+}
+.tb-cost { font-family: "Space Grotesk", "Inter Tight", system-ui, sans-serif; font-weight: 700; font-size: 1.6cqw; color: var(--tl-ink); text-align: right; font-variant-numeric: tabular-nums; }
+.tb-foot { display: flex; align-items: center; justify-content: space-between; gap: 1.5cqw; margin-top: 0.9cqw; background: rgba(248, 117, 101, 0.1); border: 0.12cqw solid rgba(248, 117, 101, 0.4); border-radius: 0.8cqw; padding: 0.9cqw 1.4cqw; }
+.tb-toggle { display: flex; align-items: center; gap: 0.8cqw; cursor: pointer; user-select: none; }
+.tb-switch { width: 3.4cqw; height: 1.8cqw; border-radius: 1cqw; background: rgba(255, 255, 255, 0.15); border: 0.12cqw solid rgba(255, 255, 255, 0.3); position: relative; transition: background 0.15s, border-color 0.15s; flex-shrink: 0; }
+.tb-switch::after { content: ""; position: absolute; top: 0.16cqw; left: 0.18cqw; width: 1.3cqw; height: 1.3cqw; border-radius: 50%; background: rgb(255, 255, 255); transition: left 0.15s; }
+.tb-toggle.is-on .tb-switch { background: var(--tl-coral); border-color: var(--tl-coral); }
+.tb-toggle.is-on .tb-switch::after { left: 1.9cqw; }
+.tb-toggle .lbl { font-size: 1.3cqw; line-height: 1.3; color: var(--tl-ink-soft); }
+.tb-toggle .lbl strong { color: var(--tl-ink); font-weight: 600; }
+.tb-total { text-align: right; }
+.tb-total .num { font-family: "Space Grotesk", "Inter Tight", system-ui, sans-serif; font-weight: 700; font-size: 2.6cqw; color: var(--tl-coral); line-height: 1.05; font-variant-numeric: tabular-nums; }
+.tb-total .num span { font-size: 1.3cqw; color: var(--tl-ink-soft); font-weight: 400; }
+.tb-total .save { font-size: 1.1cqw; color: var(--tl-ink-soft); }
+.tb-total .save strong { color: var(--tl-ink); font-weight: 600; }
+.tb-qty { display: inline-flex; align-items: center; gap: 0.4cqw; margin-left: 0.7cqw; }
+.tb-qty[hidden] { display: none; }
+.tb-qty-btn { font-family: "Space Grotesk", "Inter Tight", system-ui, sans-serif; font-weight: 700; font-size: 1.2cqw; line-height: 1; color: rgba(255, 255, 255, 0.6); background: rgba(255, 255, 255, 0.06); border: 0.12cqw solid rgba(255, 255, 255, 0.2); border-radius: 0.4cqw; width: 1.9cqw; height: 1.9cqw; display: inline-flex; align-items: center; justify-content: center; padding: 0px; cursor: pointer; transition: 0.15s; }
+.tb-qty-btn:hover { border-color: rgba(248, 117, 101, 0.6); color: var(--tl-ink); }
+.tb-qty-btn:disabled { opacity: 0.3; cursor: default; }
+.iwf-sl-addon { display: flex; flex-direction: column; justify-content: center; }
+.iwf-sl-addon .tl-eyebrow { color: var(--tl-coral); margin-bottom: 0.9cqw; }
+.iwf-sl-addon .tl-h2 { font-size: 3cqw; margin-bottom: 1.1cqw; }
+.iwf-sl-addon-sub { font-size: 1.55cqw; line-height: 1.45; color: var(--tl-ink-soft); margin: 0px 0px 2cqw; max-width: 82cqw; }
+.iwf-sl-addon-cards { display: grid; grid-template-columns: 1.45fr 1fr; gap: 2.2cqw; align-items: stretch; }
+.iwf-sl-addon-what { background: rgba(255, 255, 255, 0.04); border: 0.12cqw solid rgba(255, 255, 255, 0.16); border-radius: 1cqw; padding: 1.9cqw 2.1cqw; }
+.iwf-sl-addon-what h3 { font-family: "Inter Tight", sans-serif; font-weight: 800; font-size: 1.5cqw; color: var(--tl-ink); margin: 0px 0px 1cqw; }
+.iwf-sl-addon-what ul { list-style: none; margin: 0px; padding: 0px; display: flex; flex-direction: column; gap: 0.8cqw; }
+.iwf-sl-addon-what li { position: relative; padding-left: 2cqw; font-size: 1.35cqw; line-height: 1.38; color: var(--tl-ink); }
+.iwf-sl-addon-what li::before { content: "✓"; position: absolute; left: 0px; top: 0px; color: var(--tl-coral); font-weight: 800; font-size: 1.35cqw; }
+.iwf-sl-addon-price { background: rgba(248, 117, 101, 0.1); border: 0.16cqw solid var(--tl-coral); border-radius: 1cqw; padding: 2cqw 2.1cqw; display: flex; flex-direction: column; justify-content: center; }
+.iwf-sl-addon-price .label { font-family: "Inter Tight", sans-serif; font-weight: 700; font-size: 1cqw; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tl-ink-faint); margin-bottom: 0.5cqw; }
+.iwf-sl-addon-price .num { font-family: "Inter Tight", sans-serif; font-weight: 800; font-size: 3.6cqw; line-height: 1; color: var(--tl-coral); margin-bottom: 0.8cqw; }
+.iwf-sl-addon-price .note { font-size: 1.3cqw; line-height: 1.4; color: var(--tl-ink); }
+.iwf-sl-addon-price .note strong { color: var(--tl-coral); font-weight: 700; }
+
+.present-stage { touch-action: pan-y; }
+.present-hint:focus-visible, .tb-alloc button:focus-visible, .tb-toggle:focus-visible, .edit-bar button:focus-visible { outline: 2px solid var(--tl-coral); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .present-slide-wrap { transition: none; } }
+
+/* Traction Menu (from the TractionLab pitch deck) */
+.slide--traction-menu .slide-inner { display: flex; flex-direction: column; }
+.slide-menu-title { font-size: 1.99cqw; margin-bottom: 0.4cqw; }
+.slide-menu-sub { font-size: 0.99cqw; margin-bottom: 1.19cqw; max-width: 80%; }
+.slide-menu-grid { flex: 1 1 0%; display: grid; grid-template-columns: repeat(10, 1fr); grid-auto-rows: minmax(0px, 1fr); gap: 0.3cqw; min-height: 0px; }
+.slide-menu-tile { background: rgba(255, 255, 255, 0.04); border-width: 0.22cqw 0.1cqw 0.1cqw; border-style: solid; border-color: rgba(255, 255, 255, 0.25) rgba(255, 255, 255, 0.1) rgba(255, 255, 255, 0.1); border-radius: 0.5cqw; padding: 0.37cqw 0.3cqw 0.23cqw; display: flex; flex-direction: column; min-width: 0px; overflow: hidden; }
+.slide-menu-code { font-weight: 800; font-size: 1cqw; letter-spacing: 0.02em; color: var(--tl-ink); line-height: 1; }
+.slide-menu-name { font-size: 0.78cqw; line-height: 1.2; margin-top: 0.3cqw; color: var(--tl-ink-soft); font-weight: 400; overflow: hidden; }
+.slide-menu-tile.is-core { border: 0.1cqw solid var(--tl-coral); border-top-width: 0.22cqw; background: rgba(248, 117, 101, 0.08); }
+.slide-menu-tile.is-core .slide-menu-code { color: var(--tl-coral); }
+.slide-menu-tile.cat-cohort { border-top-color: rgb(248, 117, 101); }
+.slide-menu-tile.cat-content { border-top-color: rgb(255, 178, 106); }
+.slide-menu-tile.cat-social { border-top-color: rgb(244, 211, 94); }
+.slide-menu-tile.cat-growth { border-top-color: rgb(131, 227, 119); }
+.slide-menu-tile.cat-validate { border-top-color: rgb(110, 207, 224); }
+.slide-menu-tile.cat-paid { border-top-color: rgb(126, 159, 243); }
+.slide-menu-tile.cat-partner { border-top-color: rgb(180, 140, 245); }
+.slide-menu-tile.cat-intel { border-top-color: rgb(244, 144, 209); }
+.slide-menu-tile.cat-brand { border-top-color: rgb(255, 178, 165); }
+.slide-menu-tile.cat-platform { border-top-color: rgb(174, 216, 255); }
+.slide-menu-tile.cat-monetize { border-top-color: rgb(131, 227, 119); }
+.slide-menu-tile.cat-retain { border-top-color: rgb(244, 211, 94); }
+.slide-menu-tile.cat-dist { border-top-color: rgb(255, 178, 106); }
+
+/* Click-to-edit */
+.present-edit { right: 130px; }
+.present-edit[aria-pressed="true"] { color: var(--tl-navy); background: var(--tl-coral); border-color: var(--tl-coral); }
+body.is-editing [data-editable] { outline: 1px dashed rgba(248, 117, 101, 0.45); outline-offset: 0.3cqw; border-radius: 0.3cqw; cursor: text; }
+body.is-editing [data-editable]:hover { outline-color: var(--tl-coral); }
+body.is-editing [data-editable]:focus { outline: 2px solid var(--tl-coral); background: rgba(248, 117, 101, 0.08); }
+body.is-editing .tb-row { cursor: default; }
+.edit-bar { position: fixed; top: 12px; left: 50%; transform: translateX(-50%); z-index: 120; display: flex; align-items: center; gap: 12px; padding: 8px 10px 8px 16px; border-radius: 999px; background: rgba(14, 16, 52, 0.94); border: 1px solid rgba(248, 117, 101, 0.5); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45); font: 400 13px/1.3 Rubik, sans-serif; color: rgba(255, 255, 255, 0.8); max-width: calc(100vw - 32px); }
+.edit-bar strong { color: #fff; font-weight: 600; }
+.edit-bar .edit-status { color: var(--tl-coral-soft); }
+.edit-bar button { appearance: none; border-radius: 999px; padding: 7px 14px; font: 700 12px/1 Rubik, sans-serif; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; }
+.edit-bar .edit-save { background: var(--tl-coral); color: var(--tl-navy); border: 0; }
+.edit-bar .edit-save:disabled { opacity: 0.6; cursor: wait; }
+.edit-bar .edit-cancel { background: transparent; color: rgba(255, 255, 255, 0.7); border: 1px solid rgba(255, 255, 255, 0.25); }
+@media (max-width: 640px) { .edit-bar .edit-hint { display: none; } }
+</style>
+<main class="present-stage" id="stage" data-src="mount"></main>
+<div id="ui-root" data-src="mount"></div>
+<template id="deck-src" data-src="">
+<!-- ===== 1 · Cover ===== -->
+<section class="present-slide-wrap" data-name="cover">
+<div class="slide slide--cover"><div class="slide-inner">
+<div class="slide-cover-client-project">Brush and Net</div>
+<h2 class="slide-cover-title">Impact Week findings</h2>
+<h2 class="slide-cover-title slide-cover-title--coral">&amp; conclusions.</h2>
+<div class="slide-cover-footer">Findings &amp; Conclusions · designli.co</div>
+</div></div>
+</section>
+
+<!-- ===== 2 · Agenda ===== -->
+<section class="present-slide-wrap" data-name="agenda">
+<div class="slide slide--bullets"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="slide-eyebrow">TODAY</div>
+<h3 class="slide-h2">Agenda</h3>
+<ul class="slide-bullets">
+<li><strong class="emph">What we found</strong> - UX, frontend, backend, GTM motion</li>
+<li><strong class="emph">Where you’re headed</strong> - your vision, 90-day plans, the Day-30 guarantee</li>
+<li><strong class="emph">The path to your goal</strong> - recommendations &amp; your first 90 days</li>
+<li><strong class="emph">Q&amp;A</strong> - with your Impact Week team</li>
+<li><strong class="emph">Your team &amp; investment</strong> - who you get &amp; what it costs</li>
+</ul>
+</div></div>
+</section>
+
+<!-- ===== 3 · What we found (divider) ===== -->
+<section class="present-slide-wrap" data-name="found">
+<div class="slide slide--cover"><div class="slide-inner">
+<div class="slide-eyebrow">THIS WEEK</div>
+<h2 class="slide-cover-title">What we</h2>
+<h2 class="slide-cover-title slide-cover-title--coral">found.</h2>
+<p class="slide-cover-sub">A week inside your product: an honest look at the design, the code and the go-to-market motion, and what’s holding growth back - then the path it points to.</p>
+<div class="slide-cover-footer">Findings first · conclusions after</div>
+</div></div>
+</section>
+
+<!-- ===== 4 · Issues summary ===== -->
+<section class="present-slide-wrap" data-name="issues">
+<div class="slide slide--custom-html"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="tl-slide-custom"><div class="tl-inner iwf-issues">
+<div class="tl-eyebrow">WHAT WE FOUND</div>
+<h2 class="tl-h2">The issues holding you back - <span class="coral">by priority.</span></h2>
+<p class="iwf-issues-sub">Across design, code, and go-to-market - ranked by how hard each one blocks traction. We’ll walk them one by one.</p>
+<div class="iwf-issues-list">
+<div class="iwf-issues-row"><span class="iwf-issues-pri">Critical</span><span class="iwf-issues-name">Anyone can promote themselves to company "owner"</span><span class="iwf-issues-area">Backend</span></div>
+<div class="iwf-issues-row"><span class="iwf-issues-pri">Critical</span><span class="iwf-issues-name">Importer "Replace" mode silently wipes all client and service history</span><span class="iwf-issues-area">Backend</span></div>
+<div class="iwf-issues-row"><span class="iwf-issues-pri">Critical</span><span class="iwf-issues-name">Field saves don't wait for server confirmation</span><span class="iwf-issues-area">Frontend</span></div>
+<div class="iwf-issues-row"><span class="iwf-issues-pri">Critical</span><span class="iwf-issues-name">Estimates screen crashes the app</span><span class="iwf-issues-area">Frontend</span></div>
+<div class="iwf-issues-row"><span class="iwf-issues-pri">High</span><span class="iwf-issues-name">Importer has no duplicate check — re-importing a file doubles the client list</span><span class="iwf-issues-area">Backend</span></div>
+<div class="iwf-issues-row"><span class="iwf-issues-pri">High</span><span class="iwf-issues-name">Every "done" tap re-downloads every pool's full history and photos to every phone</span><span class="iwf-issues-area">Backend</span></div>
+<div class="iwf-issues-row"><span class="iwf-issues-pri">High</span><span class="iwf-issues-name">Lack of product analytics and user action visibility</span><span class="iwf-issues-area">Product</span></div>
+</div>
+</div></div>
+</div></div>
+</section>
+
+<!-- ===== 5 · Issue 1 ===== -->
+<section class="present-slide-wrap" data-name="issue-1">
+<div class="slide slide--custom-html"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="tl-slide-custom"><div class="tl-inner iwf-issue">
+<div class="tl-eyebrow">WHAT WE FOUND · ISSUE 1</div>
+<div class="iwf-issue-tags"><span class="iwf-issue-tag iwf-issue-tag--pri">Critical</span><span class="iwf-issue-tag">Backend</span></div>
+<h2 class="tl-h2 iwf-issue-title">Anyone can promote themselves to company "owner"</h2>
+<div class="iwf-issue-why-label">Why this is holding you back</div>
+<p class="iwf-issue-why">A single bad actor — or a curious technician — can take over an entire pool company's account; this has to be fixed before you can safely let paying customers in.</p>
+</div></div>
+</div></div>
+</section>
+
+<!-- ===== 6 · Issue 2 ===== -->
+<section class="present-slide-wrap" data-name="issue-2">
+<div class="slide slide--custom-html"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="tl-slide-custom"><div class="tl-inner iwf-issue">
+<div class="tl-eyebrow">WHAT WE FOUND · ISSUE 2</div>
+<div class="iwf-issue-tags"><span class="iwf-issue-tag iwf-issue-tag--pri">Critical</span><span class="iwf-issue-tag">Backend</span></div>
+<h2 class="tl-h2 iwf-issue-title">Importer "Replace" mode silently wipes all client and service history</h2>
+<div class="iwf-issue-why-label">Why this is holding you back</div>
+<p class="iwf-issue-why">One wrong click erases a customer's entire book of business — the exact nightmare that will kill word-of-mouth in a tight-knit regional market.</p>
+</div></div>
+</div></div>
+</section>
+
+<!-- ===== 7 · Issue 3 ===== -->
+<section class="present-slide-wrap" data-name="issue-3">
+<div class="slide slide--custom-html"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="tl-slide-custom"><div class="tl-inner iwf-issue">
+<div class="tl-eyebrow">WHAT WE FOUND · ISSUE 3</div>
+<div class="iwf-issue-tags"><span class="iwf-issue-tag iwf-issue-tag--pri">Critical</span><span class="iwf-issue-tag">Frontend</span></div>
+<h2 class="tl-h2 iwf-issue-title">Field saves don't wait for server confirmation</h2>
+<div class="iwf-issue-why-label">Why this is holding you back</div>
+<p class="iwf-issue-why">Techs tap "Done" in weak-signal yards and the log quietly fails — the very "lost visit logs" your pitch promises to eliminate, happening inside your own app.</p>
+</div></div>
+</div></div>
+</section>
+
+<!-- ===== 8 · Issue 4 ===== -->
+<section class="present-slide-wrap" data-name="issue-4">
+<div class="slide slide--custom-html"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="tl-slide-custom"><div class="tl-inner iwf-issue">
+<div class="tl-eyebrow">WHAT WE FOUND · ISSUE 4</div>
+<div class="iwf-issue-tags"><span class="iwf-issue-tag iwf-issue-tag--pri">Critical</span><span class="iwf-issue-tag">Frontend</span></div>
+<h2 class="tl-h2 iwf-issue-title">Estimates screen crashes the app</h2>
+<div class="iwf-issue-why-label">Why this is holding you back</div>
+<p class="iwf-issue-why">A hard crash on a core money-making screen will get the app uninstalled on day one of the pilot and affect your St. Johns County reference base.</p>
+</div></div>
+</div></div>
+</section>
+
+<!-- ===== 10 · Issue 6 ===== -->
+<section class="present-slide-wrap" data-name="issue-6">
+<div class="slide slide--custom-html"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="tl-slide-custom"><div class="tl-inner iwf-issue">
+<div class="tl-eyebrow">WHAT WE FOUND · ISSUE 5</div>
+<div class="iwf-issue-tags"><span class="iwf-issue-tag iwf-issue-tag--pri">High</span><span class="iwf-issue-tag">Backend</span></div>
+<h2 class="tl-h2 iwf-issue-title">Importer has no duplicate check — re-importing a file doubles the client list</h2>
+<div class="iwf-issue-why-label">Why this is holding you back</div>
+<p class="iwf-issue-why">"Frictionless migration off Skimmer" is your core wedge; an importer that corrupts data on contact kills the switch-over story before trials even start.</p>
+</div></div>
+</div></div>
+</section>
+
+<!-- ===== 11 · Issue 7 ===== -->
+<section class="present-slide-wrap" data-name="issue-7">
+<div class="slide slide--custom-html"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="tl-slide-custom"><div class="tl-inner iwf-issue">
+<div class="tl-eyebrow">WHAT WE FOUND · ISSUE 6</div>
+<div class="iwf-issue-tags"><span class="iwf-issue-tag iwf-issue-tag--pri">High</span><span class="iwf-issue-tag">Backend</span></div>
+<h2 class="tl-h2 iwf-issue-title">Every "done" tap re-downloads every pool's full history and photos to every phone</h2>
+<div class="iwf-issue-why-label">Why this is holding you back</div>
+<p class="iwf-issue-why">Techs burn through battery and cell data in a day — the exact field pain you're selling against — and the problem gets worse as a company grows, punishing your best customers.</p>
+</div></div>
+</div></div>
+</section>
+
+<!-- ===== 13 · Tracking & analytics ===== -->
+<section class="present-slide-wrap" data-name="tracking">
+<div class="slide slide--custom-html"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="tl-slide-custom"><div class="tl-inner iwf-issue">
+<div class="tl-eyebrow">WHAT WE FOUND · TRACKING &amp; ANALYTICS</div>
+<div class="iwf-issue-tags"><span class="iwf-issue-tag iwf-issue-tag--pri">High</span><span class="iwf-issue-tag">Product</span></div>
+<h2 class="tl-h2 iwf-issue-title">Lack of product analytics and user action visibility</h2>
+<p class="iwf-issue-desc">We have users, but we’re totally in the dark on their actions - and the snags they’re hitting within the platform.</p>
+<div class="iwf-issue-why-label">Why this is holding you back</div>
+<p class="iwf-issue-why">We’re guessing what users like and don’t like about your product - and data is not feeding our plan for what to do next.</p>
+</div></div>
+</div></div>
+</section>
+
+<!-- ===== GTM recommendations ===== -->
+<section class="present-slide-wrap" data-name="gtm-recommendations">
+<div class="slide slide--custom-html"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="tl-slide-custom"><div class="tl-inner iwf-issues">
+<div class="tl-eyebrow">GO-TO-MARKET</div>
+<h2 class="tl-h2">Our recommendations - <span class="coral">to win your first market.</span></h2>
+<p class="iwf-issues-sub">What we’d change in how you find, convert, and keep pool operators - in the order we'd tackle them.</p>
+<div class="iwf-issues-list">
+<div class="iwf-issues-row"><span class="iwf-issues-pri">Rec 1</span><span class="iwf-issues-name">Launch a landing page with a waitlist</span><span class="iwf-issues-area">Acquisition</span></div>
+<div class="iwf-issues-row"><span class="iwf-issues-pri">Rec 2</span><span class="iwf-issues-name">Recruit from your network</span><span class="iwf-issues-area">Acquisition</span></div>
+<div class="iwf-issues-row"><span class="iwf-issues-pri">Rec 3</span><span class="iwf-issues-name">Figure out where the users live</span><span class="iwf-issues-area">Acquisition</span></div>
+<div class="iwf-issues-row"><span class="iwf-issues-pri">Rec 4</span><span class="iwf-issues-name">Create a comparison page</span><span class="iwf-issues-area">Conversion</span></div>
+<div class="iwf-issues-row"><span class="iwf-issues-pri">Rec 5</span><span class="iwf-issues-name">Referral program post-launch</span><span class="iwf-issues-area">Referral</span></div>
+</div>
+</div></div>
+</div></div>
+</section>
+
+<!-- ===== GTM recommendation 1 ===== -->
+<section class="present-slide-wrap" data-name="gtm-rec-1">
+<div class="slide slide--custom-html"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="tl-slide-custom"><div class="tl-inner iwf-issue">
+<div class="tl-eyebrow">GO-TO-MARKET · RECOMMENDATION 1</div>
+<div class="iwf-issue-tags"><span class="iwf-issue-tag">Acquisition</span></div>
+<h2 class="tl-h2 iwf-issue-title">Launch a landing page with a waitlist</h2>
+<div class="iwf-issue-why-label">Why this moves traction</div>
+<p class="iwf-issue-why">Before the product is launched, there is a page capturing interest, it needs to be real and live. When someone joins the waitlist, they receive at least one follow-up email. Keeps them warm, starts building a relationship before the product is ready.</p>
+</div></div>
+</div></div>
+</section>
+
+<!-- ===== GTM recommendation 2 ===== -->
+<section class="present-slide-wrap" data-name="gtm-rec-2">
+<div class="slide slide--custom-html"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="tl-slide-custom"><div class="tl-inner iwf-issue">
+<div class="tl-eyebrow">GO-TO-MARKET · RECOMMENDATION 2</div>
+<div class="iwf-issue-tags"><span class="iwf-issue-tag">Acquisition</span></div>
+<h2 class="tl-h2 iwf-issue-title">Recruit from your network</h2>
+<div class="iwf-issue-why-label">Why this moves traction</div>
+<p class="iwf-issue-why">The first 10–20 users of almost every successful product came from people the founder already knew. Not because they were easy to reach, because the personal relationship lowered the trust barrier enough to get someone to try an unfinished product. Before you spend a single hour on cold outreach or ad spend, exhaust this channel completely.</p>
+</div></div>
+</div></div>
+</section>
+
+<!-- ===== GTM recommendation 3 ===== -->
+<section class="present-slide-wrap" data-name="gtm-rec-3">
+<div class="slide slide--custom-html"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="tl-slide-custom"><div class="tl-inner iwf-issue">
+<div class="tl-eyebrow">GO-TO-MARKET · RECOMMENDATION 3</div>
+<div class="iwf-issue-tags"><span class="iwf-issue-tag">Acquisition</span></div>
+<h2 class="tl-h2 iwf-issue-title">Figure out where the users live</h2>
+<div class="iwf-issue-why-label">Why this moves traction</div>
+<p class="iwf-issue-why">Identify 3–5 communities where the target user already spends time: Reddit threads, Facebook Groups, Slack/Discord communities, niche forums. Be present and understand their language before asking for anything.</p>
+</div></div>
+</div></div>
+</section>
+
+<!-- ===== GTM recommendation 4 ===== -->
+<section class="present-slide-wrap" data-name="gtm-rec-4">
+<div class="slide slide--custom-html"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="tl-slide-custom"><div class="tl-inner iwf-issue">
+<div class="tl-eyebrow">GO-TO-MARKET · RECOMMENDATION 4</div>
+<div class="iwf-issue-tags"><span class="iwf-issue-tag">Conversion</span></div>
+<h2 class="tl-h2 iwf-issue-title">Create a comparison page</h2>
+<div class="iwf-issue-why-label">Why this moves traction</div>
+<p class="iwf-issue-why">When someone is evaluating your product, they're also searching an "old way vs. new way" to compare and be convinced.</p>
+</div></div>
+</div></div>
+</section>
+
+<!-- ===== GTM recommendation 5 ===== -->
+<section class="present-slide-wrap" data-name="gtm-rec-5">
+<div class="slide slide--custom-html"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="tl-slide-custom"><div class="tl-inner iwf-issue">
+<div class="tl-eyebrow">GO-TO-MARKET · RECOMMENDATION 5</div>
+<div class="iwf-issue-tags"><span class="iwf-issue-tag">Referral</span></div>
+<h2 class="tl-h2 iwf-issue-title">Referral program post-launch</h2>
+<div class="iwf-issue-why-label">Why this moves traction</div>
+<p class="iwf-issue-why">Standard referral with an incentive. A referred user converts at 3–5x the rate of a cold acquisition and churns at half the rate. The reason is trust: someone they know vouched for the product before they opened the app.</p>
+</div></div>
+</div></div>
+</section>
+
+<!-- ===== Traction Menu ===== -->
+<section class="present-slide-wrap" data-name="traction-menu">
+<div class="slide slide--traction-menu"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="slide-eyebrow">HOW WE EARN THE NEXT MISSION</div>
+<h3 class="slide-h2 slide-menu-title">Not improvised. A known menu, picked per ICP.</h3>
+<p class="slide-sub slide-menu-sub">Seven core activities on every engagement. You and your PO will pick the rest from ~40 more, tuned to your market, stage, and motion. Your PO is the data-driven, analytical mind behind tracking experiments and seeing what works — leading your product toward product-led growth. When specialists are needed beyond the core Traction Menu, the PO is the 'glue' that holds it together, tracking effectiveness.</p>
+<div class="slide-menu-grid">
+<div class="slide-menu-tile is-core cat-core"><div class="slide-menu-code">LP</div><div class="slide-menu-name">Landing + waitlist</div></div>
+<div class="slide-menu-tile is-core cat-core"><div class="slide-menu-code">VP</div><div class="slide-menu-name">Value prop</div></div>
+<div class="slide-menu-tile is-core cat-core"><div class="slide-menu-code">SOC</div><div class="slide-menu-name">Primary channel</div></div>
+<div class="slide-menu-tile is-core cat-core"><div class="slide-menu-code">PH</div><div class="slide-menu-name">PostHog setup</div></div>
+<div class="slide-menu-tile is-core cat-core"><div class="slide-menu-code">COH</div><div class="slide-menu-name">First cohort doc</div></div>
+<div class="slide-menu-tile is-core cat-core"><div class="slide-menu-code">DRP</div><div class="slide-menu-name">Waitlist drip</div></div>
+<div class="slide-menu-tile is-core cat-core"><div class="slide-menu-code">LOC</div><div class="slide-menu-name">Where they live</div></div>
+<div class="slide-menu-tile cat-cohort"><div class="slide-menu-code">CLD</div><div class="slide-menu-name">Cold outreach</div></div>
+<div class="slide-menu-tile cat-cohort"><div class="slide-menu-code">COM</div><div class="slide-menu-name">Niche community</div></div>
+<div class="slide-menu-tile cat-cohort"><div class="slide-menu-code">NET</div><div class="slide-menu-name">Founder network</div></div>
+<div class="slide-menu-tile cat-cohort"><div class="slide-menu-code">SUR</div><div class="slide-menu-name">Beta survey</div></div>
+<div class="slide-menu-tile cat-cohort"><div class="slide-menu-code">PTR</div><div class="slide-menu-name">Community partner</div></div>
+<div class="slide-menu-tile cat-content"><div class="slide-menu-code">FDR</div><div class="slide-menu-name">Founder post</div></div>
+<div class="slide-menu-tile cat-content"><div class="slide-menu-code">SEO</div><div class="slide-menu-name">SEO page</div></div>
+<div class="slide-menu-tile cat-content"><div class="slide-menu-code">NL</div><div class="slide-menu-name">Newsletter</div></div>
+<div class="slide-menu-tile cat-content"><div class="slide-menu-code">CMP</div><div class="slide-menu-name">Compare page</div></div>
+<div class="slide-menu-tile cat-social"><div class="slide-menu-code">PST</div><div class="slide-menu-name">Posting cadence</div></div>
+<div class="slide-menu-tile cat-social"><div class="slide-menu-code">ENG</div><div class="slide-menu-name">Engagement</div></div>
+<div class="slide-menu-tile cat-social"><div class="slide-menu-code">CMN</div><div class="slide-menu-name">Beta community</div></div>
+<div class="slide-menu-tile cat-social"><div class="slide-menu-code">PHT</div><div class="slide-menu-name">Product Hunt</div></div>
+<div class="slide-menu-tile cat-growth"><div class="slide-menu-code">WL→</div><div class="slide-menu-name">Waitlist unlock</div></div>
+<div class="slide-menu-tile cat-growth"><div class="slide-menu-code">REF</div><div class="slide-menu-name">Referral program</div></div>
+<div class="slide-menu-tile cat-growth"><div class="slide-menu-code">ONB</div><div class="slide-menu-name">Onboarding opt</div></div>
+<div class="slide-menu-tile cat-growth"><div class="slide-menu-code">INV</div><div class="slide-menu-name">Invite teammate</div></div>
+<div class="slide-menu-tile cat-validate"><div class="slide-menu-code">INT</div><div class="slide-menu-name">User interview</div></div>
+<div class="slide-menu-tile cat-validate"><div class="slide-menu-code">CSR</div><div class="slide-menu-name">Cohort survey</div></div>
+<div class="slide-menu-tile cat-validate"><div class="slide-menu-code">REP</div><div class="slide-menu-name">Session replay</div></div>
+<div class="slide-menu-tile cat-validate"><div class="slide-menu-code">LRN</div><div class="slide-menu-name">Weekly learn</div></div>
+<div class="slide-menu-tile cat-paid"><div class="slide-menu-code">ADS</div><div class="slide-menu-name">Micro-ad test</div></div>
+<div class="slide-menu-tile cat-paid"><div class="slide-menu-code">RTG</div><div class="slide-menu-name">Retargeting</div></div>
+<div class="slide-menu-tile cat-paid"><div class="slide-menu-code">UTM</div><div class="slide-menu-name">Attribution</div></div>
+<div class="slide-menu-tile cat-partner"><div class="slide-menu-code">ICO</div><div class="slide-menu-name">Integration launch</div></div>
+<div class="slide-menu-tile cat-partner"><div class="slide-menu-code">CBR</div><div class="slide-menu-name">Co-brand content</div></div>
+<div class="slide-menu-tile cat-partner"><div class="slide-menu-code">AFF</div><div class="slide-menu-name">Affiliate</div></div>
+<div class="slide-menu-tile cat-intel"><div class="slide-menu-code">CMT</div><div class="slide-menu-name">Comp tracker</div></div>
+<div class="slide-menu-tile cat-intel"><div class="slide-menu-code">W/L</div><div class="slide-menu-name">Win/loss</div></div>
+<div class="slide-menu-tile cat-brand"><div class="slide-menu-code">POL</div><div class="slide-menu-name">Visual polish</div></div>
+<div class="slide-menu-tile cat-brand"><div class="slide-menu-code">DS</div><div class="slide-menu-name">Design system</div></div>
+<div class="slide-menu-tile cat-brand"><div class="slide-menu-code">EML</div><div class="slide-menu-name">Transactional email</div></div>
+<div class="slide-menu-tile cat-platform"><div class="slide-menu-code">2PL</div><div class="slide-menu-name">2nd platform</div></div>
+<div class="slide-menu-tile cat-platform"><div class="slide-menu-code">API</div><div class="slide-menu-name">Public API</div></div>
+<div class="slide-menu-tile cat-platform"><div class="slide-menu-code">WBH</div><div class="slide-menu-name">Webhooks</div></div>
+<div class="slide-menu-tile cat-monetize"><div class="slide-menu-code">PRC</div><div class="slide-menu-name">Pricing test</div></div>
+<div class="slide-menu-tile cat-monetize"><div class="slide-menu-code">FTP</div><div class="slide-menu-name">Free-to-paid</div></div>
+<div class="slide-menu-tile cat-monetize"><div class="slide-menu-code">CHN</div><div class="slide-menu-name">Churn interview</div></div>
+<div class="slide-menu-tile cat-retain"><div class="slide-menu-code">LCL</div><div class="slide-menu-name">Lifecycle email</div></div>
+<div class="slide-menu-tile cat-retain"><div class="slide-menu-code">PSH</div><div class="slide-menu-name">Push strategy</div></div>
+<div class="slide-menu-tile cat-retain"><div class="slide-menu-code">WER</div><div class="slide-menu-name">Weekly review</div></div>
+<div class="slide-menu-tile cat-dist"><div class="slide-menu-code">ASO</div><div class="slide-menu-name">App store opt</div></div>
+<div class="slide-menu-tile cat-dist"><div class="slide-menu-code">DIR</div><div class="slide-menu-name">Marketplace</div></div>
+</div>
+</div></div>
+</section>
+
+<!-- ===== 14 · Unblocking Mode ===== -->
+<section class="present-slide-wrap" data-name="unblocking">
+<div class="slide slide--custom-html"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="tl-slide-custom"><div class="tl-inner iwf-unblock">
+<div class="tl-eyebrow">GETTING YOU PAST THIS</div>
+<h2 class="tl-h2">Our methodology begins with <span class="coral">Unblocking Mode.</span></h2>
+<p class="iwf-unblock-body">Step one of working together is clearing these roadblocks - so you’re back to <strong>chasing traction and your vision</strong> instead of fighting your product.</p>
+<div class="iwf-unblock-flow">
+<span class="iwf-unblock-step">The issues you just saw</span>
+<span class="iwf-unblock-arrow" aria-hidden="true">→</span>
+<span class="iwf-unblock-step iwf-unblock-step--mode">Unblocking Mode</span>
+<span class="iwf-unblock-arrow" aria-hidden="true">→</span>
+<span class="iwf-unblock-step">Traction &amp; your vision</span>
+</div>
+<p class="iwf-unblock-next">Here’s how that works.</p>
+</div></div>
+</div></div>
+</section>
+
+<!-- ===== 15 · HDD methodology ===== -->
+<section class="present-slide-wrap" data-name="methodology">
+<div class="slide slide--custom-html"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="tl-slide-custom"><div class="tl-inner iwf-hdd">
+<div class="tl-eyebrow">THE METHODOLOGY</div>
+<h2 class="tl-h2">Hypothesis-Driven Development - <span class="coral">the engine behind every 90-day&nbsp;plan.</span></h2>
+<p class="iwf-hdd-sub">First we unblock - then we cycle: formulate, build, measure, learn. A drumbeat of forward progress toward each 90-day&nbsp;goal.</p>
+<div class="iwf-hdd-figure">
+<img src="assets/hdd-modes.png" alt="Hypothesis-Driven Development: Unblocking Mode (Day-30 outcome, analytics setup, scalable tech foundation) flowing into the repeatable Hypothesis Mode cycle of formulate, build, measure, learn">
+<span class="iwf-hdd-cap" style="left: 23%;">One-time setup</span>
+<span class="iwf-hdd-cap" style="left: 77%;">Continuous cycle</span>
+</div>
+</div></div>
+</div></div>
+</section>
+
+<!-- ===== 16 · Where you're headed (divider) ===== -->
+<section class="present-slide-wrap" data-name="headed">
+<div class="slide slide--cover"><div class="slide-inner">
+<h2 class="slide-cover-title">Where you’re</h2>
+<h2 class="slide-cover-title slide-cover-title--coral">headed.</h2>
+<div class="slide-cover-footer">The goal this week was built around</div>
+</div></div>
+</section>
+
+<!-- ===== 17 · Vision focused ===== -->
+<section class="present-slide-wrap" data-name="how-we-think">
+<div class="slide slide--custom-html"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="tl-slide-custom"><div class="tl-inner iwf-frame">
+<div class="iwf-frame-copy">
+<div class="tl-eyebrow">HOW WE THINK</div>
+<h2 class="tl-h2">We are <span class="coral">vision&nbsp;focused.</span></h2>
+<p class="iwf-frame-body">It’s the lens we put on everything - what we audit, what we design, what we recommend. But a vision is too big to execute in one push, so we break it into <strong>90-day goals</strong>: concrete, finishable steps a business can actually achieve.</p>
+<p class="iwf-frame-body">That’s the framework for everything you’re about to see.</p>
+<p class="iwf-frame-next">Up next: yours.</p>
+</div>
+<div class="iwf-frame-visual">
+<div class="iwf-frame-vision"><div class="tag">The lens</div><div class="big">Your vision</div></div>
+<div class="iwf-frame-break">broken into</div>
+<div class="iwf-frame-steps">
+<div class="iwf-frame-step"><span class="n">1</span><span class="lbl">90-day goal</span><span class="sub">finishable · compounding</span></div>
+<div class="iwf-frame-step"><span class="n">2</span><span class="lbl">90-day goal</span><span class="sub">built on what we learned</span></div>
+<div class="iwf-frame-step"><span class="n">3</span><span class="lbl">90-day goal</span><span class="sub">closing in on the vision</span></div>
+</div>
+</div>
+</div></div>
+</div></div>
+</section>
+
+<!-- ===== 18 · Your vision ===== -->
+<section class="present-slide-wrap" data-name="vision">
+<div class="slide slide--mission"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="slide-eyebrow">YOUR VISION</div>
+<div class="slide-hero-center"><p class="slide-hero-copy"><strong class="coral">Become the premier field-optimized record management app for residential pool service operators, replacing glitchy per-pool incumbents with flat pricing, real-time mobile financials, and native Spanish support.</strong></p></div>
+</div></div>
+</section>
+
+<!-- ===== 19 · When you're there ===== -->
+<section class="present-slide-wrap" data-name="when-there">
+<div class="slide slide--bullets"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="slide-eyebrow">WHEN YOU'RE THERE</div>
+<h3 class="slide-h2">What achieving your vision looks like</h3>
+<p class="slide-sub">The things that will be true about your business when the vision is real.</p>
+<ul class="slide-bullets">
+<li>Dominant flat-rate alternative to Skimmer across Florida and expanded into Texas, California, and Arizona Sun Belt markets.</li>
+<li>Industry standard for in-hand mobile P&amp;L visibility, non-pool errand scheduling, and sunlight-ready dark themes.</li>
+<li>Most inclusive and dependable tool in the category — in-app Spanish UI, full offline saves, zero lost visit logs.</li>
+</ul>
+</div></div>
+</section>
+
+<!-- ===== 20 · Day-30 guarantee ===== -->
+<section class="present-slide-wrap" data-name="day-30">
+<div class="slide slide--custom-html"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="tl-slide-custom"><div class="tl-inner iwf-d30o">
+<div class="tl-eyebrow">THE DAY-30 GUARANTEE</div>
+<h2 class="tl-h2">Your biggest blocker, <span class="coral">gone in 30&nbsp;days.</span></h2>
+<div class="iwf-d30o-outcome-label">The biggest blocker holding your business back today</div>
+<div class="iwf-d30o-outcome">The platform is fully secured, hardened, and stabilized for safe public onboarding, moving the codebase from a "D+" to a release ready "A".</div>
+<div class="iwf-d30o-guarantee"><span><span class="coral">We guarantee it’s completed by 30 days from now.</span> Otherwise, Month 2 is free.</span></div>
+<p class="iwf-d30o-confirm">Is this the right call? If clearing this within 30 days wouldn’t meaningfully unblock your business, say so now - we’ll reshape it&nbsp;together.</p>
+</div></div>
+</div></div>
+</section>
+
+<!-- ===== 21 · Day-30 actions ===== -->
+<section class="present-slide-wrap" data-name="day-30-plan">
+<div class="slide slide--custom-html"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="tl-slide-custom"><div class="tl-inner iwf-d30p">
+<div class="tl-eyebrow">HOW WE’LL ACCOMPLISH IT</div>
+<h2 class="tl-h2">Your Day-30 <span class="coral">outcome.</span></h2>
+<div class="iwf-d30p-outcome">The platform is fully secured, hardened, and stabilized for safe public onboarding, moving the codebase from a "D+" to a release ready "A".</div>
+<p class="iwf-d30p-sub">The bottleneck that’s been holding you back, removed by completing these actions:</p>
+<div class="iwf-d30p-acts">
+<div class="iwf-d30p-act"><div class="iwf-d30p-num">1</div><div class="iwf-d30p-text">Fix the EstimatesScreen crash, add a global React Error Boundary, and wire up Sentry for automated error reporting.</div></div>
+<div class="iwf-d30p-act"><div class="iwf-d30p-num">2</div><div class="iwf-d30p-text">Rework saveLog, toggleDone, and related saves to wait for server confirmation with clear error and retry UI on signal loss.</div></div>
+<div class="iwf-d30p-act"><div class="iwf-d30p-num">3</div><div class="iwf-d30p-text">Lock down backend permissions so users can't change their own role or company ID.</div></div>
+<div class="iwf-d30p-act"><div class="iwf-d30p-num">4</div><div class="iwf-d30p-text">Harden the importer: per-row confirmation, real success/failure counts, duplicate blocking, and remove the destructive "Replace" mode in favor of soft-archiving.</div></div>
+<div class="iwf-d30p-act"><div class="iwf-d30p-num">5</div><div class="iwf-d30p-text">Fix dynamic "today" date handling on app refocus.</div></div>
+<div class="iwf-d30p-act"><div class="iwf-d30p-num">6</div><div class="iwf-d30p-text">Launch a Landing Page with a waitlist</div></div>
+</div>
+</div></div>
+</div></div>
+</section>
+
+<!-- ===== 22 · First 90-day goal ===== -->
+<section class="present-slide-wrap" data-name="day-90">
+<div class="slide slide--custom-html"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="tl-slide-custom"><div class="tl-inner iwf-ladder">
+<div class="tl-eyebrow">BY DAY 90</div>
+<h2 class="tl-h2">Your first <span class="coral">90-day goal.</span></h2>
+<p class="iwf-ladder-sub">Those first 30 days clear the way. Here’s what the remaining 60 days are for:</p>
+<div class="iwf-ladder-first"><span class="is-filled">Launch a hyper-local pilot in St. Johns County, FL and sign 31 paying subscribers (over 50% of the county's pool operators) via a 2-week free trial.</span></div>
+</div></div>
+</div></div>
+</section>
+
+<!-- ===== 23 · Reaching the 90-day goal ===== -->
+<section class="present-slide-wrap" data-name="day-90-plan">
+<div class="slide slide--custom-html"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="tl-slide-custom"><div class="tl-inner iwf-d30p">
+<div class="tl-eyebrow">REACHING IT</div>
+<h2 class="tl-h2">How we get to your <span class="coral">90-day goal.</span></h2>
+<p class="iwf-d30p-sub">The activities we’d run - or recommend - to land the goal:</p>
+<div class="iwf-d30p-acts">
+<div class="iwf-d30p-act"><div class="iwf-d30p-num">1</div><div class="iwf-d30p-text">Perfect CSV and Excel importers so operators can leave Skimmer in minutes without losing a single client record.</div></div>
+<div class="iwf-d30p-act"><div class="iwf-d30p-num">2</div><div class="iwf-d30p-text">Ship the Spanish UI toggle, subscription billing tiers, and offline field-use packaging.</div></div>
+<div class="iwf-d30p-act"><div class="iwf-d30p-num">3</div><div class="iwf-d30p-text">Optimize data sync so phones only download new changes instead of full history on every update.</div></div>
+<div class="iwf-d30p-act"><div class="iwf-d30p-num">4</div><div class="iwf-d30p-text">Launch a referral program — 1 month free for every paid subscriber an existing user brings in.</div></div>
+<div class="iwf-d30p-act"><div class="iwf-d30p-num">5</div><div class="iwf-d30p-text">Create word of mouth for the first cohort after friends and family.</div></div>
+<div class="iwf-d30p-act"><div class="iwf-d30p-num">6</div><div class="iwf-d30p-text">Create a comparison page: when someone is evaluating your product, they're also searching an "old way vs. new way" to compare and be convinced.</div></div>
+</div>
+</div></div>
+</div></div>
+</section>
+
+<!-- ===== 24 · UI/UX proposal ===== -->
+<section class="present-slide-wrap" data-name="prototype">
+<div class="slide slide--custom-html"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="tl-slide-custom"><div class="tl-inner iwf-prop">
+<div class="tl-eyebrow">UI / UX PROPOSAL</div>
+<h2 class="tl-h2">We rebuilt the experience - <span class="coral">come see it.</span></h2>
+<p class="iwf-prop-sub">A clickable prototype of the redesigned product, based on everything we learned this week.</p>
+<span class="iwf-prop-btn">View the prototype ↗</span>
+<div class="iwf-prop-url"><span class="is-filled">Pending</span></div>
+</div></div>
+</div></div>
+</section>
+
+<!-- ===== 25 · Ladders up to your vision ===== -->
+<section class="present-slide-wrap" data-name="ladder">
+<div class="slide slide--custom-html"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="tl-slide-custom"><div class="tl-inner iwf-tie">
+<div class="tl-eyebrow">WHY THIS WEEK MATTERED</div>
+<h2 class="tl-h2">It all ladders up to <span class="coral">your vision.</span></h2>
+<p class="iwf-tie-sub">Nothing we showed you today is tactics for tactics’ sake. Every fix removes a root problem, every root problem cleared feeds the 90-day goal, and every 90-day goal is a bite out of the big&nbsp;one.</p>
+<div class="iwf-tie-chain">
+<div class="iwf-tie-link"><div class="iwf-tie-when">Day 30</div><div class="iwf-tie-what">The guaranteed outcome: <span class="is-filled">The platform is fully secured, hardened, and stabilized for safe public onboarding, moving the codebase from a "D+" to a release ready "A".</span></div></div>
+<div class="iwf-tie-down" aria-hidden="true">↓</div>
+<div class="iwf-tie-link"><div class="iwf-tie-when">Day 90</div><div class="iwf-tie-what">The first 90-day goal: <span class="is-filled">Launch a hyper-local pilot in St. Johns County, FL and sign 31 paying subscribers (over 50% of the county's pool operators) via a 2-week free trial.</span></div></div>
+<div class="iwf-tie-down" aria-hidden="true">↓</div>
+<div class="iwf-tie-link"><div class="iwf-tie-when">Plan by plan</div><div class="iwf-tie-what">Each 90-day plan compounds on the last - built from what the product’s real users teach us.</div></div>
+<div class="iwf-tie-down" aria-hidden="true">↓</div>
+<div class="iwf-tie-link iwf-tie-link--vision"><div class="iwf-tie-when">Your vision</div><div class="iwf-tie-what"><span class="is-filled">Become the premier field-optimized record management app for residential pool service operators, replacing glitchy per-pool incumbents with flat pricing, real-time mobile financials, and native Spanish support.</span></div></div>
+</div>
+</div></div>
+</div></div>
+</section>
+
+<!-- ===== 26 · Q&A ===== -->
+<section class="present-slide-wrap" data-name="qa">
+<div class="slide slide--custom-html"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="tl-slide-custom"><div class="tl-inner iwf-qa">
+<div class="iwf-qa-big">Q&amp;A</div>
+<p class="iwf-qa-body">Any questions on what we found this week - the product, the design, the code, or the plan to your goal?</p>
+<div class="iwf-qa-team">Your Impact Week team</div>
+<div class="iwf-qa-names"><span class="is-filled">Jesus Saravia - Iliana Marticorena - Raul Montenegro</span></div>
+</div></div>
+</div></div>
+</section>
+
+<!-- ===== 27 · Team & investment (divider) ===== -->
+<section class="present-slide-wrap" data-name="investment">
+<div class="slide slide--cover"><div class="slide-inner">
+<h2 class="slide-cover-title">Your team</h2>
+<h2 class="slide-cover-title slide-cover-title--coral">&amp; investment.</h2>
+<div class="slide-cover-footer">How we’d staff the plan</div>
+</div></div>
+</section>
+
+<!-- ===== 28 · Guarantees ===== -->
+<section class="present-slide-wrap" data-name="guarantees">
+<div class="slide slide--custom-html"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="tl-slide-custom"><div class="tl-inner">
+<div class="tl-eyebrow">PAID ON OUTCOMES, NOT PROMISES</div>
+<h2 class="tl-h2">We put our fee <span class="coral">where our promise is.</span></h2>
+<div class="rr2">
+<div class="rr2-row">
+<div class="rr2-day"><div class="d">14</div><div class="l">Days</div></div>
+<div class="rr2-body"><div class="h">Any reason. Full refund.</div><div class="s">You sit through your SolutionLab. You meet the team, see the quality, watch the process. Not sold? Walk with every dollar back. No forms, no negotiation.</div><div class="rc">Trigger · your call, any reason</div></div>
+<div class="rr2-stamp"><div><span class="big">100% refund</span>All fees returned</div></div>
+</div>
+<div class="rr2-row">
+<div class="rr2-day"><div class="d">30</div><div class="l">Day mark</div></div>
+<div class="rr2-body"><div class="h">Miss the Day-30 outcome. Month 2 is on us.</div><div class="s">The Day-30 milestone is the one your Solutions Architect writes into your plan during the Impact Week. If we don't deliver it — Month 2 is on us. You keep everything we built, and get a full month of free work from your team.</div><div class="rc">Trigger · we miss the Day-30 milestone in your plan</div></div>
+<div class="rr2-stamp"><div><span class="big">Month 2 on us</span>No invoice</div></div>
+</div>
+<div class="rr2-row">
+<div class="rr2-day"><div class="d">30</div><div class="l">Days notice</div></div>
+<div class="rr2-body"><div class="h">Cancel any month. One quarter at a time.</div><div class="s">At any point during your 90-day plan, you can wind down with a 30 days' heads-up. No 12-month contracts. No handcuffs. The incentive stays on us to earn every sprint. Not a trap — just how a long partnership earns every quarter of itself.</div><div class="rc">Trigger · your call, any sprint</div></div>
+<div class="rr2-stamp"><div><span class="big">No lock-in</span>30 days' notice</div></div>
+</div>
+</div>
+<div class="rr2-caption"><span class="coral">The real commitment is 14 days, not 90.</span> Every downside is fenced. We only win when the outcomes in your customized plan land — so the incentives stay aligned, sprint after sprint.</div>
+</div></div>
+</div></div>
+</section>
+
+<!-- ===== 29 · Long-term offer ===== -->
+<section class="present-slide-wrap" data-name="long-term">
+<div class="slide slide--bullets"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="slide-eyebrow">OUR LONG-TERM OFFER</div>
+<h3 class="slide-h2">You don’t have to make the big decision right now.</h3>
+<p class="slide-sub">We’re ready to make it long-term when you are.</p>
+<ul class="slide-bullets">
+<li>You start on a month-to-month plan - cancel anytime with 30 days’ notice.</li>
+<li>When enough trust has been built, our yearly plan saves you ~25% on the monthly cost of your team.</li>
+<li class="is-coral">Switch to yearly within the first 90-day plan and we credit the difference back retroactively - you pay the yearly rate from Day 1.</li>
+</ul>
+</div></div>
+</section>
+
+<!-- ===== 30 · Team builder ===== -->
+<section class="present-slide-wrap" data-name="team">
+<div class="slide slide--custom-html"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="tl-slide-custom"><div class="tl-inner iw-team-builder">
+<div class="tl-eyebrow">LET'S BUILD YOUR TEAM</div>
+<h2 class="tl-h2">Your dedicated team, <span class="coral">built to order.</span></h2>
+<p class="tl-sub">Pick the people, set each person's allocation - the monthly investment updates live. Flip the toggle to see the same team at the <strong>yearly-commitment rate (~25% off)</strong>.</p>
+<div class="tb-table">
+<div class="tb-head"><span></span><span>Person</span><span>Allocation</span><span class="h-cost">Per month</span></div>
+<div class="tb-row is-on" data-rate="12800" data-rate-yearly="9500" data-alloc="100" data-qty="1" data-multi="1">
+<div class="tb-check">✓</div>
+<div class="tb-who"><div class="role">Product Owner<span class="tb-qty"></span></div><div class="desc">Your strategist + traction engine - runs the weekly drumbeat</div></div>
+<div class="tb-alloc"><span class="tb-spacer" aria-hidden="true">25%</span><button type="button" data-pct="50">50%</button><button type="button" data-pct="100">100%</button></div>
+<div class="tb-cost"></div>
+</div>
+<div class="tb-row is-on" data-rate="12100" data-rate-yearly="9000" data-alloc="100" data-qty="1" data-multi="1">
+<div class="tb-check">✓</div>
+<div class="tb-who"><div class="role">Fullstack Developer<span class="tb-qty"></span></div><div class="desc">AI-empowered builder. Owns your architecture and the whole stack</div></div>
+<div class="tb-alloc"><span class="tb-spacer" aria-hidden="true">25%</span><button type="button" data-pct="50">50%</button><button type="button" data-pct="100">100%</button></div>
+<div class="tb-cost"></div>
+</div>
+<div class="tb-row is-on" data-rate="15800" data-rate-yearly="11800" data-alloc="25" data-qty="1" data-id="lead">
+<div class="tb-check">✓</div>
+<div class="tb-who"><div class="role">Pod Lead</div><div class="desc">The senior leader who manages everyone on your pod and owns the guarantees</div></div>
+<div class="tb-alloc"><button type="button" data-pct="25">25%</button><span class="tb-spacer" aria-hidden="true">50%</span><span class="tb-spacer" aria-hidden="true">100%</span></div>
+<div class="tb-cost"></div>
+</div>
+<div class="tb-row" data-rate="9500" data-rate-yearly="7100" data-alloc="50" data-qty="1">
+<div class="tb-check">✓</div>
+<div class="tb-who"><div class="role">Quality Assurance Analyst</div><div class="desc">Catches it before your users do - test plans, regression &amp; release checks</div></div>
+<div class="tb-alloc"><button type="button" data-pct="25">25%</button><button type="button" data-pct="50">50%</button><button type="button" data-pct="100">100%</button></div>
+<div class="tb-cost"></div>
+</div>
+<div class="tb-row" data-rate="13800" data-rate-yearly="10300" data-alloc="50" data-qty="1">
+<div class="tb-check">✓</div>
+<div class="tb-who"><div class="role">Senior UX/UI Designer</div><div class="desc">Brand, design system, and screens you're proud to put in front of anyone</div></div>
+<div class="tb-alloc"><button type="button" data-pct="25">25%</button><button type="button" data-pct="50">50%</button><button type="button" data-pct="100">100%</button></div>
+<div class="tb-cost"></div>
+</div>
+<div class="tb-row" data-rate="13800" data-rate-yearly="10300" data-alloc="50" data-qty="1">
+<div class="tb-check">✓</div>
+<div class="tb-who"><div class="role">Solutions Architect</div><div class="desc">The mind from your Impact Week - kept on the plan for the hardest calls</div></div>
+<div class="tb-alloc"><button type="button" data-pct="25">25%</button><button type="button" data-pct="50">50%</button><button type="button" data-pct="100">100%</button></div>
+<div class="tb-cost"></div>
+</div>
+<div class="tb-row is-on" data-rate="12800" data-rate-yearly="9500" data-alloc="50" data-qty="1" data-needs="lead">
+<div class="tb-check">✓</div>
+<div class="tb-who"><div class="role">GTM Engineer</div><div class="desc">Runs the acquisition motion - paid ads, ASO, lifecycle, community, attribution. Requires the Pod Lead (min 25%)</div></div>
+<div class="tb-alloc"><span class="tb-spacer" aria-hidden="true">25%</span><button type="button" data-pct="50">50%</button><button type="button" data-pct="100">100%</button></div>
+<div class="tb-cost"></div>
+</div>
+</div>
+<div class="tb-foot">
+<div class="tb-toggle" id="tb-yearly" role="switch" aria-checked="false" tabindex="0">
+<div class="tb-switch"></div>
+<div class="lbl"><strong>Yearly commitment</strong> - same team, ~25% off every month</div>
+</div>
+<div class="tb-total">
+<div class="num" id="tb-total-num"></div>
+<div class="save" id="tb-total-save"></div>
+</div>
+</div>
+</div></div>
+</div></div>
+</section>
+
+<!-- ===== 31 · Next step? ===== -->
+<section class="present-slide-wrap" data-name="next-step">
+<div class="slide slide--mission"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="slide-hero-center"><p class="slide-hero-copy"><span>Does this feel like the right </span><strong class="coral">next step for your business?</strong></p></div>
+</div></div>
+</section>
+
+<!-- ===== 32 · Take this with you ===== -->
+<section class="present-slide-wrap" data-name="take-away">
+<div class="slide slide--share-link"><div class="slide-inner">
+<img src="assets/designli-mark.png" alt="Designli" class="slide-logo">
+<div class="slide-sharelink">
+<div class="slide-eyebrow">TAKE THIS WITH YOU</div>
+<h3 class="slide-h2">Your proposal — yours to revisit anytime.</h3>
+<p class="slide-sub">We’ll send you a private link to this exact proposal. Come back to it whenever you like, and share it with your team.</p>
+</div>
+</div></div>
+</section>
+
+<!-- ===== 33 · Close ===== -->
+<section class="present-slide-wrap" data-name="close">
+<div class="slide slide--cover"><div class="slide-inner">
+<div class="slide-eyebrow">DESIGNLI · IMPACT WEEK</div>
+<h2 class="slide-cover-title">Questions &amp;</h2>
+<h2 class="slide-cover-title slide-cover-title--coral">next steps.</h2>
+<p class="slide-cover-sub">Let’s lock in the path forward.</p>
+<div class="slide-cover-footer">designli.co</div>
+</div></div>
+</section>
+
+</template>
+<template id="ui-src" data-src="">
+<div class="present-ui" id="ui">
+<div class="present-counter"><span id="curr">1</span><span class="sep">/</span><span id="total">1</span></div>
+<button class="present-hint present-edit" id="edit" aria-label="Edit text" aria-pressed="false" hidden="">✎</button>
+<button class="present-hint present-nav-prev" id="prev" aria-label="Previous slide">‹</button>
+<button class="present-hint present-nav-next" id="next" aria-label="Next slide">›</button>
+<button class="present-hint" id="hint" aria-label="Keyboard shortcuts">?</button>
+</div>
+<div class="edit-bar" id="edit-bar" hidden="">
+<span class="edit-hint"><strong>Editing</strong> · click any outlined text to change it</span>
+<span class="edit-status" id="edit-status"></span>
+<button type="button" class="edit-cancel" id="edit-cancel">Discard</button>
+<button type="button" class="edit-save" id="edit-save">Save</button>
+</div>
+<div class="present-help" id="help" hidden="">
+<div class="present-help-inner">
+<h2>Keyboard</h2>
+<dl>
+<dt>→ · Space · PageDown</dt><dd>Next slide</dd>
+<dt>← · Shift+Space · PageUp</dt><dd>Previous slide</dd>
+<dt>Home · End</dt><dd>First · Last</dd>
+<dt>F</dt><dd>Fullscreen</dd>
+<dt>E</dt><dd>Edit text (owners and editors)</dd>
+<dt>Esc</dt><dd>Close overlay / exit fullscreen</dd>
+</dl>
+<p class="present-help-close">Press <kbd>?</kbd> to dismiss</p>
+</div>
+</div>
+</template>
+<script data-src="">
+(function () {
+  const src = document.getElementById('deck-src');
+  const stage = document.getElementById('stage');
+  stage.appendChild(src.content.cloneNode(true));
+  document.getElementById('ui-root').appendChild(document.getElementById('ui-src').content.cloneNode(true));
+
+  const slides = [...stage.querySelectorAll('.present-slide-wrap')];
+  const curr = document.getElementById('curr');
+  const help = document.getElementById('help');
+  document.body.classList.add('present-body');
+  document.getElementById('total').textContent = slides.length;
+  let i = 0;
+  let editing = false;
+
+  function go(n) {
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach((s, k) => s.classList.toggle('is-active', k === i));
+    curr.textContent = i + 1;
+    try { history.replaceState(null, '', '#s' + (i + 1)); } catch (e) {}
+  }
+  let start = 0;
+  const m = /^#s(\d+)$/.exec(location.hash);
+  if (m) start = +m[1] - 1;
+  try { const s = sessionStorage.getItem('deck-slide'); if (s !== null) { start = +s; sessionStorage.removeItem('deck-slide'); } } catch (e) {}
+  go(start);
+
+  document.getElementById('prev').onclick = () => go(i - 1);
+  document.getElementById('next').onclick = () => go(i + 1);
+  document.getElementById('hint').onclick = () => { help.hidden = !help.hidden; };
+  help.onclick = () => { help.hidden = true; };
+
+  document.addEventListener('keydown', (e) => {
+    if (e.target.isContentEditable) {
+      if (e.key === 'Escape') e.target.blur();
+      return;
+    }
+    if (e.target.closest('input, textarea, [role="switch"]') && (e.key === ' ' || e.key === 'Enter')) return;
+    const k = e.key;
+    if (k === 'ArrowRight' || k === 'PageDown' || (k === ' ' && !e.shiftKey)) { e.preventDefault(); go(i + 1); }
+    else if (k === 'ArrowLeft' || k === 'PageUp' || (k === ' ' && e.shiftKey)) { e.preventDefault(); go(i - 1); }
+    else if (k === 'Home') go(0);
+    else if (k === 'End') go(slides.length - 1);
+    else if (k === '?') help.hidden = !help.hidden;
+    else if (k === 'Escape') help.hidden = true;
+    else if ((k === 'e' || k === 'E') && !document.getElementById('edit').hidden) { editing ? null : enterEdit(); }
+    else if (k === 'f' || k === 'F') {
+      const p = document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen?.();
+      p?.catch?.(() => {});
+    }
+  });
+
+  let x0 = null;
+  stage.addEventListener('touchstart', (e) => { x0 = editing ? null : e.touches[0].clientX; }, { passive: true });
+  stage.addEventListener('touchend', (e) => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0; x0 = null;
+    if (Math.abs(dx) > 50) go(i + (dx < 0 ? 1 : -1));
+  });
+
+  let idle;
+  document.addEventListener('mousemove', () => {
+    document.body.classList.remove('is-idle');
+    clearTimeout(idle);
+    if (!editing) idle = setTimeout(() => document.body.classList.add('is-idle'), 2500);
+  });
+
+  // Team builder: cost = rate × allocation × qty; yearly toggle swaps to the yearly rate.
+  const tb = stage.querySelector('.iw-team-builder');
+  if (tb) {
+    const rows = [...tb.querySelectorAll('.tb-row')];
+    const toggle = document.getElementById('tb-yearly');
+    const fmt = (n) => '$' + Math.round(n).toLocaleString('en-US');
+    const cost = (r, yearly) => (yearly ? +r.dataset.rateYearly : +r.dataset.rate) * (+r.dataset.alloc / 100) * (+r.dataset.qty || 1);
+
+    function render() {
+      const yearly = toggle.classList.contains('is-on');
+      let mtm = 0, yr = 0;
+      rows.forEach((r) => {
+        r.querySelectorAll('.tb-alloc button').forEach((b) => b.classList.toggle('is-active', b.dataset.pct === r.dataset.alloc));
+        r.querySelector('.tb-cost').textContent = fmt(cost(r, yearly));
+        if (r.classList.contains('is-on')) { mtm += cost(r, false); yr += cost(r, true); }
+      });
+      document.getElementById('tb-total-num').innerHTML = fmt(yearly ? yr : mtm) + ' <span>/ month</span>';
+      document.getElementById('tb-total-save').innerHTML = yearly
+        ? 'Yearly commitment - <strong>' + fmt(mtm - yr) + ' / month less</strong> than month-to-month (' + fmt(mtm) + ').'
+        : 'Month-to-month - or <strong>' + fmt(yr) + ' / month on yearly</strong>. Switch any time in the first 90 days, credited back to Day 1.';
+    }
+
+    rows.forEach((r) => {
+      r.addEventListener('click', (e) => {
+        if (editing) return;
+        const b = e.target.closest('.tb-alloc button');
+        if (b) { r.dataset.alloc = b.dataset.pct; r.classList.add('is-on'); }
+        else {
+          r.classList.toggle('is-on');
+          const lead = tb.querySelector('[data-id="lead"]');
+          if (r.classList.contains('is-on') && r.dataset.needs === 'lead') lead.classList.add('is-on');
+          if (r === lead && !lead.classList.contains('is-on')) tb.querySelectorAll('[data-needs="lead"]').forEach((g) => g.classList.remove('is-on'));
+        }
+        render();
+      });
+    });
+    const flip = () => { toggle.classList.toggle('is-on'); toggle.setAttribute('aria-checked', toggle.classList.contains('is-on')); render(); };
+    toggle.addEventListener('click', flip);
+    toggle.addEventListener('keydown', (e) => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flip(); } });
+    render();
+  }
+
+  // ---- Click-to-edit ----
+  // Text blocks that can be edited. Matches nested inside another match are skipped,
+  // so the n-th block on stage always lines up with the n-th block in the source template.
+  const EDITABLE = [
+    'h2', 'h3', 'p', 'li',
+    '.slide-cover-client-project', '.slide-cover-footer', '.slide-eyebrow', '.tl-eyebrow',
+    '.iwf-issues-pri', '.iwf-issues-name', '.iwf-issues-area', '.iwf-issue-tag', '.iwf-issue-why-label',
+    '.iwf-unblock-step', '.iwf-hdd-cap', '.iwf-frame-vision .tag', '.iwf-frame-vision .big', '.iwf-frame-break',
+    '.iwf-frame-step .lbl', '.iwf-frame-step .sub', '.iwf-d30o-outcome-label', '.iwf-d30o-outcome', '.iwf-d30o-guarantee',
+    '.iwf-d30p-outcome', '.iwf-d30p-text', '.iwf-ladder-first', '.iwf-prop-btn', '.iwf-prop-url',
+    '.iwf-tie-when', '.iwf-tie-what', '.iwf-qa-big', '.iwf-qa-team', '.iwf-qa-names',
+    '.rr2-day .d', '.rr2-day .l', '.rr2-body .h', '.rr2-body .s', '.rr2-body .rc', '.rr2-stamp > div', '.rr2-caption',
+    '.tb-who .role', '.tb-who .desc', '.tb-toggle .lbl', '.slide-menu-code', '.slide-menu-name'
+  ].join(',');
+  const blocks = (root) => [...root.querySelectorAll(EDITABLE)].filter((el) => !el.parentElement.closest(EDITABLE));
+
+  const editBtn = document.getElementById('edit');
+  const bar = document.getElementById('edit-bar');
+  const status = document.getElementById('edit-status');
+  const saveBtn = document.getElementById('edit-save');
+  let live = [];
+  let before = [];
+  let artifact = null;
+
+  function setEditing(on) {
+    editing = on;
+    document.body.classList.toggle('is-editing', on);
+    document.body.classList.remove('is-idle');
+    editBtn.setAttribute('aria-pressed', on);
+    bar.hidden = !on;
+    status.textContent = '';
+    live.forEach((el) => {
+      if (on) { el.setAttribute('contenteditable', 'true'); el.setAttribute('data-editable', ''); el.spellcheck = true; }
+      else { el.removeAttribute('contenteditable'); el.removeAttribute('data-editable'); el.removeAttribute('spellcheck'); }
+    });
+  }
+  function enterEdit() {
+    live = blocks(stage);
+    before = live.map((el) => el.innerHTML);
+    setEditing(true);
+  }
+  function discard() {
+    live.forEach((el, k) => { el.innerHTML = before[k]; });
+    setEditing(false);
+  }
+
+  stage.addEventListener('paste', (e) => {
+    if (!e.target.closest('[contenteditable="true"]')) return;
+    e.preventDefault();
+    const text = (e.clipboardData || window.clipboardData).getData('text/plain');
+    document.execCommand('insertText', false, text);
+  });
+  stage.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && e.target.isContentEditable) { e.preventDefault(); document.execCommand('insertLineBreak'); }
+  });
+
+  // Rebuild the full document from the page's own source pieces (never the live DOM).
+  const SKELETON = '<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>';
+  function buildDocument() {
+    const parts = [...document.querySelectorAll('[data-src]')].map((el) =>
+      el.dataset.src === 'mount' ? el.cloneNode(false).outerHTML : el.outerHTML);
+    return SKELETON + '\n' + parts.join('\n') + '\n</body></html>';
+  }
+
+  async function save() {
+    const srcBlocks = blocks(src.content);
+    let changed = 0;
+    live.forEach((el, k) => {
+      const html = el.innerHTML.replace(/ $/, ' ').trim();
+      if (el.innerHTML !== before[k] && srcBlocks[k]) { srcBlocks[k].innerHTML = html; changed++; }
+    });
+    if (!changed) { setEditing(false); return; }
+    saveBtn.disabled = true;
+    status.textContent = 'Saving…';
+    const html = buildDocument();
+    try {
+      try { sessionStorage.setItem('deck-slide', String(i)); } catch (e) {}
+      try {
+        await artifact.publish({ 'index.html': { content: html, contentType: 'text/html' } });
+      } catch (err) {
+        if (err && (err.code === 'capability_disabled' || err.code === 'capability_removed')) await artifact.publish(html);
+        else throw err;
+      }
+      before = live.map((el) => el.innerHTML);
+      setEditing(false);
+    } catch (err) {
+      const code = err && err.code;
+      if (code === 'conflict') status.textContent = 'Someone saved a newer version. Reloading it now.';
+      else if (code === 'not_writer' || code === 'not_granted' || code === 'consent_required' || code === 'not_declared') {
+        status.textContent = 'This view is read-only. Ask the owner for edit access.';
+        editBtn.hidden = true;
+      } else if (code === 'rate_limited') status.textContent = 'Saving too often. Wait a moment, then press Save again.';
+      else status.textContent = 'Couldn’t save. Press Save to try again.';
+    } finally {
+      saveBtn.disabled = false;
+    }
+  }
+
+  editBtn.onclick = () => (editing ? discard() : enterEdit());
+  document.getElementById('edit-cancel').onclick = discard;
+  saveBtn.onclick = save;
+
+  (async () => {
+    if (!window.claude || !window.claude.use) return;
+    artifact = await window.claude.use('artifact');
+    if (artifact) editBtn.hidden = false;
+  })();
+})();
+</script>
+</body></html>
